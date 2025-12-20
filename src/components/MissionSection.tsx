@@ -246,7 +246,7 @@ export default function MissionSection() {
                   </div>
                   <div className="p-8 flex-grow flex flex-col">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-indigo-600 flex items-center justify-center text-white shrink-0">
+                      <div className="w-10 h-10 -lg bg-indigo-600 flex items-center justify-center text-white shrink-0">
                         <feature.icon size={20} />
                       </div>
                       <h3 className="text-xl font-bold">{feature.title}</h3>
