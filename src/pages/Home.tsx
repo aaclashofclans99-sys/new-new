@@ -257,44 +257,6 @@ Turning your vision into your competitive advantage.
         </div>
       </section>
 
-      {/* Enhanced Stats Section */}
-      <section className="py-16 sm:py-20 bg-[#0d1117]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal direction="up" delay={0} duration={0.8}>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#f1f5f9] text-center mb-8 sm:mb-12">
-              Our Credentials
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-            {stats.map((stat, index) => {
-              const isPercentage = stat.number.includes('%');
-              const hasPlus = stat.number.includes('+');
-              const numValue = parseInt(stat.number.match(/\d+/)?.[0] || '0');
-
-              return (
-                <ScrollReveal key={index} direction="up" delay={index * 100} duration={0.6}>
-                  <motion.div
-                    className="text-center p-4 sm:p-6 rounded-2xl transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#2563eb] to-[#3b82f6] bg-clip-text text-transparent mb-2">
-                      <AnimatedCounter
-                        target={numValue}
-                        suffix={isPercentage ? '%' : hasPlus ? '+' : ''}
-                        duration={600}
-                        className="inline-block"
-                      />
-                    </div>
-                    <div className="text-[#94a3b8] text-sm sm:text-base">{stat.label}</div>
-                  </motion.div>
-                </ScrollReveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Enhanced CTA Section */}
       <section className="py-16 sm:py-20 bg-gradient-to-br from-[#0f172a] to-[#1e3a8a]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
