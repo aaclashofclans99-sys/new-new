@@ -225,7 +225,7 @@ export default function MissionSection() {
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal1 direction="up">
             <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Premium <span className="text-indigo-400">Expertise</span></h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Our <span className="text-indigo-400">Expertise</span></h2>
               <div className="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
             </div>
           </ScrollReveal1>
