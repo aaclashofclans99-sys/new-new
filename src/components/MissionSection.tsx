@@ -319,10 +319,8 @@ export default function MissionSection() {
                      <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Support</p>
                    </div>
                    <div>
-                     <div className="text-center">
-                     <p className="text-3xl font-bold text-white">8+</p>
-                     <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Years Experience</p>
-                    </div>
+                     <p className="text-3xl font-bold text-white">50+</p>
+                     <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Verified Reviews</p>
                    </div>
                 </div>
               </div>
