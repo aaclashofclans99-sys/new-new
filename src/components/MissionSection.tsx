@@ -302,14 +302,14 @@ export default function MissionSection() {
       </div>
 
 {/* 5. Enhanced Outcomes Section (Galactic Multi-Ring Orbit) */}
-<div className="py-32 bg-white/5 rounded-[4rem] mx-4 mb-16 overflow-hidden relative"> {/* Changed mx-6 to mx-4 */}
+<div className="py-32 bg-white/5 rounded-[4rem] mx-6 mb-16 overflow-hidden relative">
   <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
-  <div className="max-w-full px-8"> {/* Changed max-w-7xl to max-w-full and increased px-6 to px-8 */}
+  <div className="max-w-7xl mx-auto px-6">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"> {/* Reduced gap-24 to gap-16 */}
       
-      {/* Left Content - Enhanced and Larger */}
+      {/* Left Content - Moved to the right */}
       <ScrollReveal1 direction="right">
-        <div className="space-y-12">
+        <div className="space-y-12 pl-8"> {/* Added pl-8 to move content right */}
           <div className="space-y-6">
             <h2 className="text-6xl lg:text-8xl font-black leading-[0.9] tracking-tighter">
               Enhanced <br /><span className="text-gradient">Outcomes</span>
