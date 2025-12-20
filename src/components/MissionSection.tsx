@@ -300,7 +300,11 @@ export default function MissionSection() {
               <div className="space-y-8">
                 <h2 className="text-5xl lg:text-7xl font-black leading-none">Enhanced <br /><span className="text-gradient">Outcomes</span></h2>
                 <div className="flex gap-4 items-center">
-                   <p className="text-indigo-400 font-bold uppercase tracking-widest text-sm">Fast • Functional • Effective</p>
+  <div className="h-px w-20 bg-indigo-500"></div>
+  <p className="text-indigo-400 font-bold uppercase tracking-widest text-sm">
+    Fast • Functional • Effective
+  </p>
+  <div className="h-px w-20 bg-indigo-500"></div>
                 </div>
                 <p className="text-slate-400 text-lg leading-relaxed max-w-lg">
                   From responsive design to solid SEO foundations, we elevate and streamline your entire online presence. Our goal is to make your business stand out in a crowded digital landscape.
