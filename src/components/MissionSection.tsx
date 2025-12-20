@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, useInView, useAnimation, animate } from 'framer-motion';
+import { motion, useInView, animate } from 'framer-motion';
 import {
   Globe,
   User,
@@ -7,7 +7,6 @@ import {
   TrendingUp,
   Megaphone,
   Briefcase,
-  Zap,
   Beaker,
   Archive,
   PackageCheck,
@@ -15,7 +14,6 @@ import {
   MessagesSquare,
   ClipboardList,
   ChevronRight,
-  Quote
 } from 'lucide-react';
 import ScrollReveal1 from './ScrollReveal1';
 
@@ -41,6 +39,30 @@ const Counter = ({ from, to, duration = 2, suffix = "" }: { from: number, to: nu
     </span>
   );
 };
+
+// Galactic Orbit Configuration
+// Inner Ring: 5 Logos, CW, 20s
+const techInner = [
+  { name: 'React', logo: 'https://cdn.simpleicons.org/react/61DAFB' },
+  { name: 'HTML5', logo: 'https://cdn.simpleicons.org/html5/E34F26' },
+  { name: 'Node.js', logo: 'https://cdn.simpleicons.org/nodedotjs/339933' },
+  { name: 'PHP', logo: 'https://cdn.simpleicons.org/php/777BB4' },
+  { name: 'MySQL', logo: 'https://cdn.simpleicons.org/mysql/4479A1' },
+];
+
+// Outer Ring: 10 Logos, CCW, 35s
+const techOuter = [
+  { name: 'WordPress', logo: 'https://cdn.simpleicons.org/wordpress/21759B' },
+  { name: 'WooCommerce', logo: 'https://cdn.simpleicons.org/woocommerce/96588A' },
+  { name: 'JavaScript', logo: 'https://cdn.simpleicons.org/javascript/F7DF1E' },
+  { name: 'Git', logo: 'https://cdn.simpleicons.org/git/F05032' },
+  { name: 'Docker', logo: 'https://cdn.simpleicons.org/docker/2496ED' },
+  { name: 'Claude', logo: 'https://cdn.simpleicons.org/anthropic/D97757' },
+  { name: 'n8n', logo: 'https://cdn.simpleicons.org/n8n/FF6D5A' },
+  { name: 'Cloudflare', logo: 'https://cdn.simpleicons.org/cloudflare/F38020' },
+  { name: 'Laravel', logo: 'https://cdn.simpleicons.org/laravel/FF2D20' },
+  { name: 'jQuery', logo: 'https://cdn.simpleicons.org/jquery/0769AD' }
+];
 
 export default function MissionSection() {
   const features = [
@@ -100,6 +122,10 @@ export default function MissionSection() {
     { icon: ClipboardList, title: "Faster Delivery", desc: "Use structured templates to accelerate delivery while maintaining high standards." }
   ];
 
+  // More condensed radii for the consistent planetary look as requested
+  const innerRadius = 'clamp(95px, 12vw, 110px)';
+  const outerRadius = 'clamp(185px, 24vw, 210px)';
+
   return (
     <section className="bg-[#28282B] text-white overflow-hidden">
       
@@ -129,7 +155,6 @@ export default function MissionSection() {
 
             <ScrollReveal1 direction="down" delay={200}>
               <div className="glass-card p-8 rounded-3xl relative overflow-hidden group">
-                {/* Smooth fade-in gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-purple-500/5 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
                 
                 <p className="text-xl md:text-2xl font-medium italic text-slate-200 mb-6 leading-relaxed relative z-10 transform transition-all duration-500 ease-out hover:scale-[1.02]">
@@ -144,20 +169,13 @@ export default function MissionSection() {
               </div>
             </ScrollReveal1>
 
-            {/* Stats Section inside the grid */}
             <div className="grid grid-cols-2 gap-6 pt-4">
               <ScrollReveal1 direction="zoom" delay={400}>
                 <div className="relative p-6 rounded-2xl overflow-hidden group hover:border-indigo-500/30 transition-all duration-500">
-                  {/* Slick Card Background with gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/70 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-2xl" />
-                  
-                  {/* Animated gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-indigo-500/10 to-indigo-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
-                  
-                  {/* Floating accent elements */}
                   <div className="absolute -right-4 -top-4 w-20 h-20 bg-indigo-600/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-700 ease-out" />
                   <div className="absolute left-4 bottom-4 w-12 h-12 bg-indigo-400/5 rounded-full blur-xl group-hover:scale-125 transition-all duration-700 ease-out delay-100" />
-                  
                   <div className="relative z-10">
                     <div className="text-4xl md:text-5xl font-black text-indigo-500 mb-1 transform transition-all duration-500 group-hover:scale-105">
                       <Counter from={0} to={97} suffix="%" />
@@ -169,16 +187,10 @@ export default function MissionSection() {
 
               <ScrollReveal1 direction="zoom" delay={500}>
                 <div className="relative p-6 rounded-2xl overflow-hidden group hover:border-violet-500/30 transition-all duration-500">
-                  {/* Slick Card Background with gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/70 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-2xl" />
-                  
-                  {/* Animated gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-violet-500/10 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
-                  
-                  {/* Floating accent elements */}
                   <div className="absolute -right-4 -top-4 w-20 h-20 bg-violet-600/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-700 ease-out" />
                   <div className="absolute left-4 bottom-4 w-12 h-12 bg-violet-400/5 rounded-full blur-xl group-hover:scale-125 transition-all duration-700 ease-out delay-100" />
-                  
                   <div className="relative z-10">
                     <div className="text-4xl md:text-5xl font-black text-violet-500 mb-1 transform transition-all duration-500 group-hover:scale-105">
                       <Counter from={0} to={100} suffix="+" />
@@ -192,7 +204,7 @@ export default function MissionSection() {
         </div>
       </div>
         
-      {/* 2. Streamline Your Digital Flow (6 features) */}
+      {/* 2. Streamline Your Digital Flow */}
       <div className="py-32 bg-[#1e1e21]/40 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal1 direction="up">
@@ -220,12 +232,12 @@ export default function MissionSection() {
         </div>
       </div>
 
-      {/* 3. Services / Offerings Section */}
+      {/* 3. Our Premium Expertise Section */}
       <div className="bg-[#1e1e21] py-32">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal1 direction="up">
             <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Our <span className="text-indigo-400">Expertise</span></h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Premium <span className="text-indigo-400">Expertise</span></h2>
               <div className="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
             </div>
           </ScrollReveal1>
@@ -289,63 +301,134 @@ export default function MissionSection() {
         </div>
       </div>
 
-      {/* 5. Enhanced Outcomes & Chicago Office Section */}
-      <div className="py-32 bg-white/5 rounded-[4rem] mx-6 mb-24">
+      {/* 5. Enhanced Outcomes Section (Galactic Multi-Ring Orbit) */}
+      <div className="py-32 bg-white/5 rounded-[4rem] mx-6 mb-16 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <ScrollReveal1 direction="up">
-              <div className="space-y-8">
-                <h2 className="text-5xl lg:text-7xl font-black leading-none">Enhanced <br /><span className="text-gradient">Outcomes</span></h2>
-                <div className="flex gap-4 items-center">
-  <div className="h-px w-20 bg-indigo-500"></div>
-  <p className="text-indigo-400 font-bold uppercase tracking-widest text-sm">
-    Fast • Functional • Effective
-  </p>
-  <div className="h-px w-20 bg-indigo-500"></div>
+            
+            {/* Left Content - Enhanced and Larger */}
+            <ScrollReveal1 direction="right">
+              <div className="space-y-12">
+                <div className="space-y-6">
+                  <h2 className="text-6xl lg:text-8xl font-black leading-[0.9] tracking-tighter">
+                    Enhanced <br /><span className="text-gradient">Outcomes</span>
+                  </h2>
+                  <div className="flex gap-6 items-center">
+                    <p className="text-indigo-400 font-black uppercase tracking-[0.5em] text-sm md:text-base">
+                      Fast • Functional • Effective
+                    </p>
+                  </div>
                 </div>
-                <p className="text-slate-400 text-lg leading-relaxed max-w-lg">
-                  From responsive design to solid SEO foundations, we elevate and streamline your entire online presence. Our goal is to make your business stand out in a crowded digital landscape.
+
+                <p className="text-slate-300 text-xl md:text-2xl leading-relaxed font-medium max-w-xl">
+                  We blend technical mastery with aesthetic precision to elevate your digital presence. Our outcomes aren't just seen—they're felt.
                 </p>
-                <div className="pt-4 flex gap-12">
-                   <div>
-                     <p className="text-3xl font-bold text-white">100+</p>
-                     <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Sites Built</p>
-                   </div>
-                   <div>
-                     <p className="text-3xl font-bold text-white">24/7</p>
-                     <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Support</p>
-                   </div>
-                   <div>
-                     <p className="text-3xl font-bold text-white">50+</p>
-                     <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Verified Reviews</p>
-                   </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pt-6">
+                  <div className="space-y-2">
+                    <p className="text-5xl font-black text-white"><Counter from={0} to={100} suffix="+" /></p>
+                    <p className="text-xs text-slate-500 uppercase font-black tracking-[0.2em]">Sites Built</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-5xl font-black text-white">24/7</p>
+                    <p className="text-xs text-slate-500 uppercase font-black tracking-[0.2em]">Support</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-5xl font-black text-white"><Counter from={0} to={50} suffix="+" /></p>
+                    <p className="text-xs text-slate-500 uppercase font-black tracking-[0.2em]">Verified Reviews</p>
+                  </div>
                 </div>
               </div>
             </ScrollReveal1>
 
-            <ScrollReveal1 direction="zoom" delay={300}>
-              <div className="relative group">
-                <div className="absolute -inset-4 bg-gradient-to-tr from-indigo-600/30 via-violet-600/30 to-blue-600/30 blur-2xl opacity-50"></div>
-                <div className="relative glass-card rounded-[3rem] p-12 overflow-hidden border border-white/10 group-hover:border-indigo-500/50 transition-all duration-500">
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-indigo-600/10 rounded-full -translate-x-[-20%] translate-y-[-20%] blur-3xl"></div>
-                  <h3 className="text-3xl font-bold mb-6">About Neptrax</h3>
-                  <div className="space-y-6 text-slate-300 leading-relaxed">
+            {/* Right Side: Galactic Multi-Ring Orbit Animation */}
+            <div className="relative flex items-center justify-center min-h-[500px]">
+              <div className="galactic-container">
+                {/* Central Anchor - Smaller and Transparent */}
+                <div className="galactic-anchor">
+                  <img src="https://cdn.simpleicons.org/google/4285F4" alt="Company Logo" />
+                </div>
+
+                {/* Inner Ring (6 logos, radius CW) */}
+                <div className="orbit-ring ring-inner">
+                  {techInner.map((tech, i) => (
+                    <div 
+                      key={tech.name} 
+                      className="orbit-node"
+                      style={{ 
+                        transform: `rotate(${i * (360 / techInner.length)}deg) translateY(${innerRadius})` 
+                      } as any}
+                    >
+                      <div className="orbit-icon">
+                        <img src={tech.logo} alt={tech.name} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Outer Ring (10 logos, CCW) - Claude AI instead of ChatGPT */}
+                <div className="orbit-ring ring-outer">
+                  {techOuter.map((tech, i) => (
+                    <div 
+                      key={tech.name} 
+                      className="orbit-node"
+                      style={{ 
+                        transform: `rotate(${i * (360 / techOuter.length)}deg) translateY(${outerRadius})` 
+                      } as any}
+                    >
+                      <div className="orbit-icon">
+                        <img src={tech.logo} alt={tech.name} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 6. About Neptrax Section */}
+      <div className="py-24 max-w-7xl mx-auto px-6 mb-24">
+        <ScrollReveal1 direction="zoom" delay={300}>
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-tr from-indigo-600/20 via-violet-600/20 to-blue-600/20 blur-3xl opacity-40"></div>
+            <div className="relative glass-card rounded-[4rem] p-12 md:p-20 overflow-hidden border border-white/10 group-hover:border-indigo-500/40 transition-all duration-700 shadow-2xl">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-600/10 rounded-full -translate-x-[-20%] translate-y-[-20%] blur-3xl"></div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="space-y-10">
+                  <h3 className="text-4xl md:text-6xl font-black tracking-tighter">About Neptrax</h3>
+                  <div className="space-y-8 text-slate-300 text-lg md:text-xl leading-relaxed">
                     <p>
-                      Based in <span className="text-white font-bold">Chicago</span>, Neptrax designs and develops apps, creates custom websites, improves Google rankings, and manages social media. 
+                      Based in <span className="text-white font-bold underline decoration-indigo-500/50 underline-offset-8">Chicago</span>, Neptrax designs and develops apps, creates custom websites, improves Google rankings, and manages social media. 
                     </p>
                     <p>
-                      With 8+ years of experience, our work stays reliable, affordable, and shaped around your business needs, serving clients across the US and internationally.
+                      With over 8 years of specialized experience, our work stays reliable, affordable, and shaped around your business needs, serving clients across the US and internationally.
                     </p>
                   </div>
-                  <div className="mt-10 p-6 rounded-2xl bg-indigo-600 flex items-center justify-between group-hover:scale-[1.02] transition-transform duration-500 cursor-pointer shadow-xl shadow-indigo-600/20">
-                     <span className="font-bold text-lg">Work with Us</span>
-                     <ChevronRight size={24} />
+                  <motion.button 
+                    whileHover={{ scale: 1.02, x: 5 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex items-center gap-4 px-10 py-5 rounded-full bg-indigo-600 font-black text-xl hover:bg-indigo-500 transition-all shadow-xl shadow-indigo-600/30 group/btn"
+                  >
+                    Work with Us
+                    <ChevronRight size={24} className="group-hover/btn:translate-x-2 transition-transform" />
+                  </motion.button>
+                </div>
+
+                <div className="hidden lg:flex items-center justify-center relative">
+                  <div className="w-72 h-72 rounded-full border border-indigo-500/20 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-700">
+                    <div className="absolute inset-0 bg-indigo-500/5 rounded-full animate-pulse"></div>
+                    <Globe size={120} className="text-indigo-400/40" />
+                    <div className="absolute -inset-8 border border-white/5 rounded-full animate-[spin_15s_linear_infinite]"></div>
                   </div>
                 </div>
               </div>
-            </ScrollReveal1>
+            </div>
           </div>
-        </div>
+        </ScrollReveal1>
       </div>
 
     </section>
