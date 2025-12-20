@@ -397,7 +397,7 @@ export default function MissionSection() {
 </div>
 
       {/* 6. About Neptrax Section - Updated Layout */}
-      <div className="py-16 max-w-full mx-auto px-4 mb-16">
+      <div className="py-24 max-w-full mx-auto px-4 mb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Horizontal Image */}
           <ScrollReveal1 direction="right">
