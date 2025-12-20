@@ -317,7 +317,7 @@ export default function MissionSection() {
           </div>
 
           <p className="text-slate-300 text-xl md:text-2xl leading-relaxed font-medium max-w-xl">
-            We blend technical mastery with aesthetic precision to elevate your digital presence. Our outcomes aren't just seen—they're felt.
+            Delivering functional, high-end digital solutions through precise engineering and creative strategy.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pt-6">
