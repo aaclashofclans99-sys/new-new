@@ -404,7 +404,7 @@ export default function MissionSection() {
             <div className="relative group overflow-hidden rounded-[3rem] border border-white/10 shadow-2xl aspect-video lg:aspect-auto lg:h-[450px]">
               <div className="absolute inset-0 bg-blue-600/10 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-700 z-10" />
               <img 
-                src="https://images.unsplash.com/photo-1522071823991-b99c2230359e?auto=format&fit=crop&q=80&w=1200" 
+                src="/about.png" 
                 alt="About Neptrax Office" 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
