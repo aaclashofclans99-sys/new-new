@@ -260,68 +260,38 @@ export default function MissionSection() {
         </div>
       </div>
 
-{/* 4. Why Choose Neptrax? */}
-<div className="py-32 relative overflow-hidden">
-  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/5 rounded-full blur-[120px] pointer-events-none"></div>
-  
-  {/* Subtle animated gradient background */}
-  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-indigo-900/5 to-transparent animate-gradient-flow"></div>
-  
-  <div className="max-w-7xl mx-auto px-6 relative z-10">
-    <ScrollReveal 
-      direction="up"
-      duration={1200}
-      easing="cubic-bezier(0.16, 1, 0.3, 1)"
-      distance="40px"
-      scale={0.98}
-    >
-      <div className="text-center mb-24">
-        <div className="inline-block overflow-hidden">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-slide-up delay-100 opacity-0 translate-y-8">
-            Why Choose Neptrax?
-          </h2>
-        </div>
-        <div className="inline-block overflow-hidden">
-          <p className="text-indigo-400 font-bold uppercase tracking-[0.3em] text-xs animate-slide-up delay-200 opacity-0 translate-y-8">
-            Global Standards • Fast Execution
-          </p>
+      {/* 4. Why Choose Neptrax? */}
+      <div className="py-32 relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <ScrollReveal direction="up">
+            <div className="text-center mb-24">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Neptrax?</h2>
+              <p className="text-indigo-400 font-bold uppercase tracking-[0.3em] text-xs">Global Standards • Fast Execution</p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((benefit, i) => (
+              <ScrollReveal 
+                key={i} 
+                direction={i % 2 === 0 ? "right" : "left"} 
+                delay={i * 50}
+              >
+                <div className="p-8 rounded-2xl glass-card border border-white/5 hover:border-indigo-500/40 transition-colors group">
+                  <div className="flex items-start gap-4">
+                    <div className="w-2 h-8 bg-indigo-500 group-hover:h-12 transition-all rounded-full shrink-0"></div>
+                    <div>
+                      <h4 className="text-lg font-bold mb-2 group-hover:text-indigo-300 transition-colors">{benefit.title}</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">{benefit.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </div>
-    </ScrollReveal>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {benefits.map((benefit, i) => (
-        <ScrollReveal 
-          key={i} 
-          direction={i % 2 === 0 ? "right" : "left"} 
-          delay={i * 100}
-          duration={1000}
-          easing="cubic-bezier(0.16, 1, 0.3, 1)"
-          distance="60px"
-          opacity={0}
-          scale={0.95}
-        >
-          <div className="p-8 rounded-2xl glass-card border border-white/5 animate-float">
-            <div className="flex items-start gap-4">
-              <div className="relative">
-                <div className="w-2 h-8 bg-gradient-to-b from-indigo-500 to-indigo-300 rounded-full shrink-0 animate-pulse-gentle"></div>
-                <div className="absolute inset-0 w-2 h-8 bg-gradient-to-b from-indigo-400 to-indigo-200 rounded-full shrink-0 animate-shimmer opacity-0"></div>
-              </div>
-              <div className="overflow-hidden">
-                <h4 className="text-lg font-bold mb-2 animate-fade-in-up delay-300 opacity-0 translate-y-4">
-                  {benefit.title}
-                </h4>
-                <p className="text-slate-400 text-sm leading-relaxed animate-fade-in-up delay-500 opacity-0 translate-y-4">
-                  {benefit.description}
-                </p>
-              </div>
-            </div>
-          </div>
-        </ScrollReveal>
-      ))}
-    </div>
-  </div>
-</div>
 
       {/* 5. Enhanced Outcomes & Chicago Office Section */}
       <div className="py-32 bg-white/5 rounded-[4rem] mx-6 mb-24">
