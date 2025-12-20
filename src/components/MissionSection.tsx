@@ -135,7 +135,6 @@ export default function MissionSection() {
                   "Neptrax delivered beyond expectations. The website feels modern, fast, and truly professional. It changed how clients see our brand."
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center font-bold shadow-lg shadow-indigo-600/20">OH</div>
                   <div>
                     <h4 className="font-bold text-lg">Oliver Hayes</h4>
                     <p className="text-slate-400 text-sm font-medium">CEO at PixelReach Studios</p>
