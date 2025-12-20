@@ -124,7 +124,7 @@ export default function MissionSection() {
           <div className="flex flex-col space-y-8">
             <ScrollReveal direction="left">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-                Smooth experiences that engage customer and grow business.
+                Smooth experiences that engage cust and grow business.
               </h2>
             </ScrollReveal>
 
