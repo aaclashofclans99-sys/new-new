@@ -105,17 +105,18 @@ export default function MissionSection() {
     <section className="bg-[#28282B] text-white overflow-hidden">
       
       {/* 1. Hero / Projects Showcase Section */}
-      <div className="max-w-7xl mx-auto px-6 pt-32 pb-24">
+      <div className="max-w-7xl mx-auto px-6 pt-32 pb-40">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <ScrollReveal direction="right" duration={0.8}>
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 aspect-[4/3]">
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 aspect-[4/3] shadow-2xl">
                 <img
                   src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1000"
                   alt="Modern Office"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#28282B]/60 to-transparent"></div>
               </div>
             </div>
           </ScrollReveal>
@@ -142,37 +143,35 @@ export default function MissionSection() {
                 </div>
               </div>
             </ScrollReveal>
+
+            {/* PLACEMENT RESTORED: Stats Section inside the grid */}
+            <div className="grid grid-cols-2 gap-6 pt-4">
+              <ScrollReveal direction="zoom" delay={400}>
+                <div className="relative p-6 rounded-2xl glass-card overflow-hidden group hover:border-indigo-500/30 transition-all">
+                  <div className="absolute -right-4 -top-4 w-20 h-20 bg-indigo-600/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
+                  <div className="text-4xl md:text-5xl font-black text-indigo-500 mb-1">
+                    <Counter from={0} to={97} suffix="%" />
+                  </div>
+                  <div className="text-slate-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Client Retention</div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal direction="zoom" delay={500}>
+                <div className="relative p-6 rounded-2xl glass-card overflow-hidden group hover:border-violet-500/30 transition-all">
+                  <div className="absolute -right-4 -top-4 w-20 h-20 bg-violet-600/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
+                  <div className="text-4xl md:text-5xl font-black text-violet-500 mb-1">
+                    <Counter from={0} to={100} suffix="+" />
+                  </div>
+                  <div className="text-slate-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Global Projects</div>
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* 2. Stats Section (CRITICAL - Animated Numbers) */}
-      <div className="bg-white/5 border-y border-white/5 py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-600/5 to-transparent"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
-            <ScrollReveal direction="zoom">
-              <div className="space-y-2">
-                <div className="text-7xl md:text-8xl font-black text-indigo-500 tracking-tighter">
-                  <Counter from={0} to={97} suffix="%" />
-                </div>
-                <p className="text-slate-400 font-bold uppercase tracking-widest text-sm">Client Retention Rate</p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal direction="zoom" delay={200}>
-              <div className="space-y-2">
-                <div className="text-7xl md:text-8xl font-black text-violet-500 tracking-tighter">
-                  <Counter from={0} to={100} suffix="+" />
-                </div>
-                <p className="text-slate-400 font-bold uppercase tracking-widest text-sm">Global Projects Delivered</p>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </div>
-
-      {/* 3. Streamline Your Digital Flow (6 features) */}
-      <div className="py-32">
+      {/* 2. Streamline Your Digital Flow (6 features) */}
+      <div className="py-32 bg-[#1e1e21]/40 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal direction="up">
             <div className="text-center mb-24">
@@ -199,7 +198,7 @@ export default function MissionSection() {
         </div>
       </div>
 
-      {/* 4. Services / Offerings Section */}
+      {/* 3. Services / Offerings Section */}
       <div className="bg-[#1e1e21] py-32">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal direction="up">
@@ -238,7 +237,7 @@ export default function MissionSection() {
         </div>
       </div>
 
-      {/* 5. Why Choose Neptrax? (Alternating sides reveal) */}
+      {/* 4. Why Choose Neptrax? */}
       <div className="py-32 relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/5 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -271,7 +270,7 @@ export default function MissionSection() {
         </div>
       </div>
 
-      {/* 6. Enhanced Outcomes & Chicago Office Section */}
+      {/* 5. Enhanced Outcomes & Chicago Office Section */}
       <div className="py-32 bg-white/5 rounded-[4rem] mx-6 mb-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
