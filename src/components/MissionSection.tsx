@@ -398,7 +398,7 @@ export default function MissionSection() {
 
       {/* 6. About Neptrax Section - Updated Layout */}
       <div className="py-16 max-w-full mx-auto px-12 mb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Horizontal Image */}
           <ScrollReveal1 direction="right">
             <div className="relative group overflow-hidden rounded-[3rem] border border-white/10 shadow-2xl aspect-video lg:aspect-auto lg:h-[450px]">
