@@ -130,7 +130,6 @@ export default function MissionSection() {
 
             <ScrollReveal direction="left" delay={200}>
               <div className="glass-card p-8 rounded-3xl relative">
-                <Quote className="absolute top-4 right-8 text-indigo-500/20 w-16 h-16" />
                 <p className="text-xl md:text-2xl font-medium italic text-slate-200 mb-6 leading-relaxed">
                   "Neptrax delivered beyond expectations. The website feels modern, fast, and truly professional. It changed how clients see our brand."
                 </p>
