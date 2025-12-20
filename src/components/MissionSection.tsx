@@ -123,7 +123,7 @@ export default function MissionSection() {
           <div className="flex flex-col space-y-8">
             <ScrollReveal1 direction="left">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-                Providing Smooth Client Experiences
+                Providing Smoother Client Experiences
               </h2>
             </ScrollReveal1>
 
