@@ -124,25 +124,24 @@ export default function MissionSection() {
           <div className="flex flex-col space-y-8">
             <ScrollReveal direction="left">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-                Smooth experiences that engage cust and grow business.
+                Smooth experiences that <span className="text-gradient">engage customers</span> and grow business.
               </h2>
             </ScrollReveal>
 
-            <ScrollReveal direction="left" delay={200}>
-              <div className="glass-card p-8 rounded-3xl relative">
-                <Quote className="absolute top-4 right-8 text-indigo-500/20 w-16 h-16" />
-                <p className="text-xl md:text-2xl font-medium italic text-slate-200 mb-6 leading-relaxed">
-                  "Neptrax delivered beyond expectations. The website feels modern, fast, and truly professional. It changed how clients see our brand."
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center font-bold shadow-lg shadow-indigo-600/20">OH</div>
-                  <div>
-                    <h4 className="font-bold text-lg">Oliver Hayes</h4>
-                    <p className="text-slate-400 text-sm font-medium">CEO at PixelReach Studios</p>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
+         <ScrollReveal direction="left" delay={200}>
+  <div className="glass-card p-8 rounded-3xl relative">
+    <Quote className="absolute top-4 right-8 text-indigo-500/20 w-16 h-16" />
+    <p className="text-xl md:text-2xl font-medium italic text-slate-200 mb-6 leading-relaxed">
+      "Neptrax delivered beyond expectations. The website feels modern, fast, and truly professional. It changed how clients see our brand."
+    </p>
+    <div className="flex items-center gap-4">
+      <div>
+        <h4 className="font-bold text-lg">Oliver Hayes</h4>
+        <p className="text-slate-400 text-sm font-medium">CEO at PixelReach Studios</p>
+      </div>
+    </div>
+  </div>
+</ScrollReveal>
 
             {/* PLACEMENT RESTORED: Stats Section inside the grid */}
             <div className="grid grid-cols-2 gap-6 pt-4">
