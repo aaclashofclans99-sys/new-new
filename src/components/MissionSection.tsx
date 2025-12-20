@@ -311,16 +311,16 @@ export default function MissionSection() {
                 </p>
                 <div className="pt-4 flex gap-12">
                    <div>
-                     <p className="text-3xl font-bold text-white">8+</p>
-                     <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Years Exp.</p>
+                     <p className="text-3xl font-bold text-white">100+</p>
+                     <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Sites Built</p>
                    </div>
                    <div>
                      <p className="text-3xl font-bold text-white">24/7</p>
                      <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Support</p>
                    </div>
                    <div>
-                     <p className="text-3xl font-bold text-white">100%</p>
-                     <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Dedication</p>
+                     <p className="text-3xl font-bold text-white">8+</p>
+                     <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Years Experience</p>
                    </div>
                 </div>
               </div>
