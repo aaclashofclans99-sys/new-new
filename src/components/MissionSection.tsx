@@ -347,7 +347,7 @@ export default function MissionSection() {
               <div className="galactic-container">
                 {/* Central Anchor - Smaller and Transparent */}
                 <div className="galactic-anchor">
-                  <img src="https://cdn.simpleicons.org/google/4285F4" alt="Company Logo" />
+                  <img src="/logo.png" alt="Company Logo" />
                 </div>
 
                 {/* Inner Ring (6 logos, radius CW) */}
