@@ -1,4 +1,6 @@
-import React from 'react';
+
+import React, { useEffect, useState, useRef } from 'react';
+import { motion, useInView, useAnimation, animate } from 'framer-motion';
 import {
   Globe,
   User,
@@ -13,331 +15,321 @@ import {
   Focus,
   MessagesSquare,
   ClipboardList,
+  ChevronRight,
+  Quote
 } from 'lucide-react';
-
 import ScrollReveal from './ScrollReveal';
+
+const Counter = ({ from, to, duration = 2, suffix = "" }: { from: number, to: number, duration?: number, suffix?: string }) => {
+  const [count, setCount] = useState(from);
+  const nodeRef = useRef(null);
+  const isInView = useInView(nodeRef, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(from, to, {
+        duration: duration,
+        onUpdate: (value) => setCount(Math.floor(value)),
+        ease: "easeOut",
+      });
+      return () => controls.stop();
+    }
+  }, [from, to, duration, isInView]);
+
+  return (
+    <span ref={nodeRef} className="tabular-nums">
+      {count}{suffix}
+    </span>
+  );
+};
 
 export default function MissionSection() {
   const features = [
     {
       icon: Briefcase,
       title: 'Business Website',
-      description:
-        'Every business needs a solid foundation online. We build professional, easy-to-navigate websites that clearly showcase what you offer, making it simple for potential customers to understand your value and take the next step.',
-      image: '/design/business.png',
+      description: 'Every business needs a solid foundation online. We build professional, easy-to-navigate websites that clearly showcase what you offer, making it simple for customers to understand your value.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600',
     },
     {
       icon: User,
       title: 'Personal Portfolio',
-      description: 'Your work is your story. Don’t just list it "Present it". We create stunning, Iconic portfolios that do more than display your projects, they capture your unique style and build a personal brand that makes you impossible to forget.',
-      image: '/design/personal.png',
+      description: 'Your work is your story. Don’t just list it—Present it. We create stunning portfolios that capture your unique style and build a personal brand that makes you impossible to forget.',
+      image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=600',
     },
     {
       icon: Search,
       title: 'On-Page SEO',
-      description: 'What good is a beautiful website if no one can find it? We meticulously optimize every page from content to code to rank higher on Google, helping you attract a steady stream of the right customers, Neptrax is where great designs meets strategic growth with.',
-      image: '/design/seo.png',
+      description: 'What good is a beautiful website if no one can find it? We meticulously optimize every page from content to code to rank higher on Google, helping you attract the right customers.',
+      image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=600',
     },
     {
       icon: TrendingUp,
-      title: 'SEO Audit & Strategy',
-      description: 'Feeling lost in the search results? We provide a deep-dive analysis of your current site and competitors, delivering a clear, actionable roadmap to climb the rankings and dominate your niche. Your path to growth starts here with Better data and Clear direction..',
-      image: '/design/seo2.png',
+      title: 'SEO Strategy',
+      description: 'Feeling lost in search results? We provide deep-dive analysis of your current site and competitors, delivering a clear roadmap to climb rankings and dominate your niche.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600',
     },
     {
       icon: Megaphone,
       title: 'Marketing Website',
-      description: 'Stop letting visitors leave empty-handed. We design and build high-converting landing pages and sales funnels focused on a single goal: turning viewers into leads and customers. Maximize your ROI with a website built for action.',
-      image: '/design/market.png',
+      description: 'Stop letting visitors leave empty-handed. We design high-converting landing pages and sales funnels focused on a single goal: turning viewers into leads and customers.',
+      image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&q=80&w=600',
     },
     {
       icon: Globe,
       title: 'Brand Endorsement',
-      description: 'Your digital presence is your modern-day handshake. We build websites that go beyond looks, creating a genuine connection with your audience by authentically communicating your values, building lasting trust, and turning visitors into believers.',
-      image: '/design/brand.png',
+      description: 'Your digital presence is your handshake. We build websites that go beyond looks, creating a genuine connection by authentically communicating your values and building trust.',
+      image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=600',
     },
   ];
 
   const benefits = [
-    {
-      title: 'Local Expertise',
-      description:
-        "Leverage our deep, country-wide expertise to drive growth and connect with customers across the United States..",
-    },
-    {
-      title: 'Proven Results',
-      description:
-        'We deliver measurable success in digital traffic, qualified leads, and revenue growth.',
-    },
-    {
-      title: 'Tailored Strategys',
-      description: 'Get a custom digital strategy designed to solve your unique business challenges.',
-    },
-    {
-      title: 'Dedicated Partnership',
-      description: "Stay informed and in control with transparent communication every step of the way.",
-    },
-    {
-      title: 'Smart Investment',
-      description:
-        'Achieve outstanding digital quality and results without stretching your budget.',
-    },
-    {
-      title: 'Digital Transformation',
-      description: 'We provide integrated solutions from web development to social media management.',
-    },
+    { title: 'Local Expertise', description: 'Leverage our deep, country-wide expertise to drive growth across the United States.' },
+    { title: 'Proven Results', description: 'We deliver measurable success in digital traffic, qualified leads, and revenue growth.' },
+    { title: 'Tailored Strategy', description: 'Get a custom digital strategy designed to solve your unique business challenges.' },
+    { title: 'Dedicated Partnership', description: 'Stay informed and in control with transparent communication every step of the way.' },
+    { title: 'Smart Investment', description: 'Achieve outstanding digital quality and results without stretching your budget.' },
+    { title: 'Digital Transformation', description: 'Integrated solutions from web development to full social media management.' },
+  ];
+
+  const flowFeatures = [
+    { icon: Beaker, title: "Project Mapping", desc: "Break down complex projects into clear, actionable tasks for a seamless workflow." },
+    { icon: Archive, title: "Intelligent Progress", desc: "Automatically file away completed milestones maintaining a focused workspace." },
+    { icon: PackageCheck, title: "Deployment Ready", desc: "Receive final deliverables that are ready for instant global implementation." },
+    { icon: Focus, title: "Project Lens", desc: "Customize your view to highlight immediate priorities and filter out irrelevant noise." },
+    { icon: MessagesSquare, title: "Team Dialogue", desc: "Embed discussions and feedback within specific tasks to enhance collaboration." },
+    { icon: ClipboardList, title: "Faster Delivery", desc: "Use structured templates to accelerate delivery while maintaining high standards." }
   ];
 
   return (
-    <section className="bg-[#28282B] py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        
-{/* Hero Image + Text */}
-<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
-  <ScrollReveal direction="left" delay={0} depth={2}>
-    <div className="order-2 lg:order-1">
-      <div className="relative overflow-hidden rounded-2xl">
-        <img
-          src="/home.png"
-          alt="Jeton Project"
-          className="w-full h-auto object-contain lg:object-cover lg:h-[540px] hover:brightness-110 transition-all duration-300"
-          style={{ borderRadius: '0.75rem' }}
-        />
-      </div>
-    </div>
-  </ScrollReveal>
-
-          <ScrollReveal direction="right" delay={150}>
-            <div className="order-1 lg:order-2">
-              <h2 className="text-4xl font-bold text-white mb-6 leading-tight">
-                Smooth experiences that engage customers and grow your business.
-              </h2>
-
-              <div className="bg-[#1e293b]/50 rounded-2xl p-8 mb-8 border border-white/10">
-                <p className="text-white text-lg italic mb-4">
-                  "Neptrax delivered beyond expectations. The website feels modern, fast, and truly professional in every way. It changed how clients see our brand."
-                </p>
-                <p className="text-[#94a3b8] text-sm">— Oliver Hayes, CEO at PixelReach Studios</p>
-              </div>
-
-              {/* REPLACED: Ultra-Premium Glass Gradient Version */}
-              <div className="grid grid-cols-2 gap-6">
-                <ScrollReveal direction="zoom" delay={300}>
-                  <div className="
-  relative rounded-2xl p-6 text-center overflow-hidden
-  backdrop-blur-2xl bg-white/5
-  border border-white/20
-  transition-all duration-500
-  hover:scale-[1.04] hover:shadow-[0_0_40px_rgba(80,70,255,0.5)]
-">
-                    {/* Glossy overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/10 opacity-40 pointer-events-none"></div>
-
-                    {/* Subtle glow layer */}
-                    <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-[#2563eb]/25 to-[#8b5cf6]/25 blur-4xl opacity-60"></div>
-
-                    <div className="relative z-10">
-                      <div className="font-['inter'] text-4xl font-extrabold bg-gradient-to-r from-[#3b82f6] via-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent mb-2">
-                        97%
-                      </div>
-                      <div className="text-[#cbd5e1] text-sm tracking-wide">Client Retention</div>
-                    </div>
-                  </div>
-                </ScrollReveal>
-
-                <ScrollReveal direction="zoom" delay={400}>
-                  <div className="
-  relative rounded-2xl p-6 text-center overflow-hidden
-  backdrop-blur-2xl bg-white/5
-  border border-white/20
-  transition-all duration-500
-  hover:scale-[1.04] hover:shadow-[0_0_40px_rgba(80,70,255,0.5)]
-">
-                    {/* Glossy overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/10 opacity-40 pointer-events-none"></div>
-
-                    {/* Subtle glow layer */}
-                    <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-[#2563eb]/25 to-[#8b5cf6]/25 blur-4xl opacity-60"></div>
-
-                    <div className="relative z-10">
-                      <div className="font-['inter'] text-4xl font-extrabold bg-gradient-to-r from-[#3b82f6] via-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent mb-2">
-                        100+
-                      </div>
-                      <div className="text-[#cbd5e1] text-sm tracking-wide">Projects Delivered</div>
-                    </div>
-                  </div>
-                </ScrollReveal>
+    <section className="bg-[#28282B] text-white overflow-hidden">
+      
+      {/* 1. Hero / Projects Showcase Section */}
+      <div className="max-w-7xl mx-auto px-6 pt-32 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <ScrollReveal direction="right" duration={0.8}>
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 aspect-[4/3]">
+                <img
+                  src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1000"
+                  alt="Modern Office"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
             </div>
           </ScrollReveal>
-        </div>
 
-        {/* Section Intro */}
-        <ScrollReveal direction="up" delay={0}>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-[#2563eb] to-[#3b82f6] bg-clip-text text-transparent mb-4">
-              Streamline Your Website Management
-            </h2>
-            <p className="text-white text-lg max-w-3xl mx-auto">
-              Take full control of your digital presence. Simplify content management, collaborate with clarity, and accelerate your business with our intuitive workflows.
-            </p>
-          </div>
-        </ScrollReveal>
+          <div className="flex flex-col space-y-8">
+            <ScrollReveal direction="left">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+                Smooth experiences that <span className="text-gradient">engage customers</span> and grow business.
+              </h2>
+            </ScrollReveal>
 
-{/* Features List */}
-<div className="py-20">
-  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <ScrollReveal direction="up" delay={0}>
-      <div className="flex lg:flex-col gap-4">
-        <Beaker className="text-[#2563eb]" size={28} />
-        <div>
-          <h3 className="text-[#f1f5f9] font-semibold block text-xl">Project Mapping</h3>
-          <p className="text-[#94a3b8] mt-2">
-            Break down complex projects into clear, actionable tasks for a seamless workflow.
-          </p>
-        </div>
-      </div>
-    </ScrollReveal>
-
-    <ScrollReveal direction="up" delay={100}>
-      <div className="flex lg:flex-col gap-4">
-        <Archive className="text-[#2563eb]" size={28} />
-        <div>
-          <h3 className="text-[#f1f5f9] font-semibold block text-xl">Intelligent Progress Tracking</h3>
-          <p className="text-[#94a3b8] mt-2">
-            Automatically file away completed milestones maintaining a focused workspace.
-          </p>
-        </div>
-      </div>
-    </ScrollReveal>
-
-    <ScrollReveal direction="up" delay={200}>
-      <div className="flex lg:flex-col gap-4">
-        <PackageCheck className="text-[#2563eb]" size={28} />
-        <div>
-          <h3 className="text-[#f1f5f9] font-semibold block text-xl">Assets Ready for Deployment</h3>
-          <p className="text-[#94a3b8] mt-2">Receive final deliverables that are ready for instant implementation.</p>
-        </div>
-      </div>
-    </ScrollReveal>
-
-    <ScrollReveal direction="up" delay={300}>
-      <div className="flex lg:flex-col gap-4">
-        <Focus className="text-[#2563eb]" size={28} />
-        <div>
-          <h3 className="text-[#f1f5f9] font-semibold block text-xl">Project Lens</h3>
-          <p className="text-[#94a3b8] mt-2">Customize your view to highlight immediate priorities and filter out irrelevant information.</p>
-        </div>
-      </div>
-    </ScrollReveal>
-
-    <ScrollReveal direction="up" delay={400}>
-      <div className="flex lg:flex-col gap-4">
-        <MessagesSquare className="text-[#2563eb]" size={28} />
-        <div>
-          <h3 className="text-[#f1f5f9] font-semibold block text-xl">Team Dialogue</h3>
-          <p className="text-[#94a3b8] mt-2">Embed discussions and feedback within specific tasks to enhance collaboration.</p>
-        </div>
-      </div>
-    </ScrollReveal>
-
-    <ScrollReveal direction="up" delay={500}>
-      <div className="flex lg:flex-col gap-4">
-        <ClipboardList className="text-[#2563eb]" size={28} />
-        <div>
-          <h3 className="text-[#f1f5f9] font-semibold block text-xl">Faster Delivery</h3>
-          <p className="text-[#94a3b8] mt-2">Use structured templates to accelerate delivery while maintaining high standards.</p>
-        </div>
-      </div>
-    </ScrollReveal>
-  </div>
-</div>
-
-        {/* Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-          {features.map((feature, index) => (
-            <ScrollReveal key={index} direction="up" delay={index * 100} depth={1}>
-              <div className="bg-[#1e293b]/50 rounded-2xl p-6 hover:bg-[#1e3a8a]/30 transition-all border border-white/10 hover:border-[#2563eb]/50 hover:shadow-[0_0_30px_rgba(37,99,235,0.3)] h-full">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2563eb] to-[#1e3a8a] flex items-center justify-center mb-4">
-                  <feature.icon className="text-white" size={24} />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-[#94a3b8] text-sm mb-4 leading-relaxed">{feature.description}</p>
-
-                <div className="rounded-lg overflow-hidden border border-white/10">
-                  <img src={feature.image} alt={feature.title} className="w-full h-32 object-cover" />
+            <ScrollReveal direction="left" delay={200}>
+              <div className="glass-card p-8 rounded-3xl relative">
+                <Quote className="absolute top-4 right-8 text-indigo-500/20 w-16 h-16" />
+                <p className="text-xl md:text-2xl font-medium italic text-slate-200 mb-6 leading-relaxed">
+                  "Neptrax delivered beyond expectations. The website feels modern, fast, and truly professional. It changed how clients see our brand."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center font-bold shadow-lg shadow-indigo-600/20">OH</div>
+                  <div>
+                    <h4 className="font-bold text-lg">Oliver Hayes</h4>
+                    <p className="text-slate-400 text-sm font-medium">CEO at PixelReach Studios</p>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
-          ))}
-        </div>
-
-        {/* Why Choose Section */}
-        <ScrollReveal direction="up" delay={0}>
-          <div className="mb-16">
-            <h2 className="text-4xl font-bold text-white text-center mb-4">Why Choose Neptrax?</h2>
-            <p className="text-white/80 text-lg text-center mb-12">World-Class Expertise. Fast & Professional Execution.</p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {benefits.map((benefit, index) => (
-                <ScrollReveal key={index} direction="up" delay={index * 80} depth={1}>
-                  <div className="bg-[#1e293b]/50 rounded-xl p-6 border border-white/10 hover:border-[#2563eb]/50 transition-all h-full">
-                    <h4 className="text-lg font-bold text-white mb-2">{benefit.title}</h4>
-                    <p className="text-[#94a3b8] text-sm leading-relaxed">{benefit.description}</p>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
           </div>
-        </ScrollReveal>
+        </div>
+      </div>
 
-        {/* Outcome Highlight */}
-        <ScrollReveal direction="zoom" delay={0}>
-          <div className="text-center py-20 relative">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-64 h-64 bg-[#2563eb] rounded-full blur-[100px] opacity-30"></div>
-            </div>
-
-            <div className="relative z-10">
-              <h2 className="text-5xl font-bold text-white mb-6">Enhanced Outcomes</h2>
-              <h3 className="text-3xl font-bold text-white mb-8">Fast, Functional & Effective</h3>
-
-              <div className="flex justify-center mb-8">
-                <div className="relative">
-                  <Zap size={120} className="text-[#2563eb] animate-pulse" strokeWidth={2} />
-                  <div className="absolute inset-0 blur-xl bg-[#2563eb]/50"></div>
+      {/* 2. Stats Section (CRITICAL - Animated Numbers) */}
+      <div className="bg-white/5 border-y border-white/5 py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-600/5 to-transparent"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
+            <ScrollReveal direction="zoom">
+              <div className="space-y-2">
+                <div className="text-7xl md:text-8xl font-black text-indigo-500 tracking-tighter">
+                  <Counter from={0} to={97} suffix="%" />
                 </div>
+                <p className="text-slate-400 font-bold uppercase tracking-widest text-sm">Client Retention Rate</p>
               </div>
+            </ScrollReveal>
+            <ScrollReveal direction="zoom" delay={200}>
+              <div className="space-y-2">
+                <div className="text-7xl md:text-8xl font-black text-violet-500 tracking-tighter">
+                  <Counter from={0} to={100} suffix="+" />
+                </div>
+                <p className="text-slate-400 font-bold uppercase tracking-widest text-sm">Global Projects Delivered</p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </div>
 
-              <p className="text-white/90 text-lg max-w-2xl mx-auto">
-                From responsive design to solid SEO foundations, we elevate and streamline your entire online presence.
+      {/* 3. Streamline Your Digital Flow (6 features) */}
+      <div className="py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <ScrollReveal direction="up">
+            <div className="text-center mb-24">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Streamline Your <span className="text-indigo-400">Digital Flow</span></h2>
+              <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+                Take full control of your digital presence with tools designed for speed, clarity, and precision.
               </p>
             </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {flowFeatures.map((item, i) => (
+              <ScrollReveal key={i} direction="up" delay={i * 100}>
+                <div className="group p-8 rounded-3xl glass-card hover:bg-white/5 transition-all duration-300 border border-white/5 hover:border-indigo-500/30">
+                  <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6 group-hover:scale-110 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500">
+                    <item.icon size={28} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-indigo-300 transition-colors">{item.title}</h3>
+                  <p className="text-slate-400 leading-relaxed text-sm">{item.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
-        </ScrollReveal>
+        </div>
+      </div>
 
-{/* About Section */}
-<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-24">
-  <ScrollReveal direction="left" delay={0} depth={2}>
-    <div className="relative overflow-hidden rounded-2xl">
-      <img 
-        src="/aboutneptrax.png" 
-        alt="About Neptrax" 
-        className="w-full h-auto object-contain lg:object-cover lg:h-full bg-transparent"
-      />
-    </div>
-  </ScrollReveal>
+      {/* 4. Services / Offerings Section */}
+      <div className="bg-[#1e1e21] py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <ScrollReveal direction="up">
+            <div className="text-center mb-24">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Premium <span className="text-indigo-400">Expertise</span></h2>
+              <div className="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+            </div>
+          </ScrollReveal>
 
-  <ScrollReveal direction="right" delay={150}>
-    <div>
-      <h2 className="text-4xl font-bold text-white mb-6">About Neptrax</h2>
-      <p className="text-white/90 text-5x1 leading-relaxed">
-        Based in Chicago, Neptrax designs and develops apps, creates custom websites, improves Google rankings, and manages social media. With 8+ years of experience, the work stays reliable, affordable, and shaped around your business needs, serving clients across the US and internationally. Whether you're starting out or growing, the process stays simple and smooth.
-      </p>
-    </div>
-  </ScrollReveal>
-</div>
-</div>
-</section>
-);
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, idx) => (
+              <ScrollReveal key={idx} direction="up" delay={idx * 100}>
+                <div className="group h-full flex flex-col glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-500 border border-white/5 hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.3)]">
+                  <div className="h-48 overflow-hidden relative">
+                    <img src={feature.image} alt={feature.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-indigo-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                      <Zap className="text-white w-10 h-10" />
+                    </div>
+                  </div>
+                  <div className="p-8 flex-grow flex flex-col">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-indigo-600 flex items-center justify-center text-white shrink-0">
+                        <feature.icon size={20} />
+                      </div>
+                      <h3 className="text-xl font-bold">{feature.title}</h3>
+                    </div>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">{feature.description}</p>
+                    <a href="#" className="inline-flex items-center gap-2 text-indigo-400 font-bold group/link">
+                      Learn More <ChevronRight size={16} className="transition-transform group-hover/link:translate-x-1" />
+                    </a>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* 5. Why Choose Neptrax? (Alternating sides reveal) */}
+      <div className="py-32 relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <ScrollReveal direction="up">
+            <div className="text-center mb-24">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Neptrax?</h2>
+              <p className="text-indigo-400 font-bold uppercase tracking-[0.3em] text-xs">Global Standards • Fast Execution</p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((benefit, i) => (
+              <ScrollReveal 
+                key={i} 
+                direction={i % 2 === 0 ? "right" : "left"} 
+                delay={i * 50}
+              >
+                <div className="p-8 rounded-2xl glass-card border border-white/5 hover:border-indigo-500/40 transition-colors group">
+                  <div className="flex items-start gap-4">
+                    <div className="w-2 h-8 bg-indigo-500 group-hover:h-12 transition-all rounded-full shrink-0"></div>
+                    <div>
+                      <h4 className="text-lg font-bold mb-2 group-hover:text-indigo-300 transition-colors">{benefit.title}</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">{benefit.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* 6. Enhanced Outcomes & Chicago Office Section */}
+      <div className="py-32 bg-white/5 rounded-[4rem] mx-6 mb-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <ScrollReveal direction="up">
+              <div className="space-y-8">
+                <div className="inline-block px-4 py-1 rounded-full bg-indigo-600/20 text-indigo-400 text-xs font-black uppercase tracking-widest border border-indigo-600/30">
+                  Impact Focus
+                </div>
+                <h2 className="text-5xl lg:text-7xl font-black leading-none">Enhanced <br /><span className="text-gradient">Outcomes</span></h2>
+                <div className="flex gap-4 items-center">
+                   <div className="h-px w-20 bg-indigo-500"></div>
+                   <p className="text-indigo-400 font-bold uppercase tracking-widest text-sm">Fast • Functional • Effective</p>
+                </div>
+                <p className="text-slate-400 text-lg leading-relaxed max-w-lg">
+                  From responsive design to solid SEO foundations, we elevate and streamline your entire online presence. Our goal is to make your business stand out in a crowded digital landscape.
+                </p>
+                <div className="pt-4 flex gap-12">
+                   <div>
+                     <p className="text-3xl font-bold text-white">8+</p>
+                     <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Years Exp.</p>
+                   </div>
+                   <div>
+                     <p className="text-3xl font-bold text-white">24/7</p>
+                     <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Support</p>
+                   </div>
+                   <div>
+                     <p className="text-3xl font-bold text-white">100%</p>
+                     <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Dedication</p>
+                   </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="zoom" delay={300}>
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-tr from-indigo-600/30 via-violet-600/30 to-blue-600/30 blur-2xl opacity-50"></div>
+                <div className="relative glass-card rounded-[3rem] p-12 overflow-hidden border border-white/10 group-hover:border-indigo-500/50 transition-all duration-500">
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-indigo-600/10 rounded-full -translate-x-[-20%] translate-y-[-20%] blur-3xl"></div>
+                  <h3 className="text-3xl font-bold mb-6">About Neptrax</h3>
+                  <div className="space-y-6 text-slate-300 leading-relaxed">
+                    <p>
+                      Based in <span className="text-white font-bold">Chicago</span>, Neptrax designs and develops apps, creates custom websites, improves Google rankings, and manages social media. 
+                    </p>
+                    <p>
+                      With 8+ years of experience, our work stays reliable, affordable, and shaped around your business needs, serving clients across the US and internationally.
+                    </p>
+                  </div>
+                  <div className="mt-10 p-6 rounded-2xl bg-indigo-600 flex items-center justify-between group-hover:scale-[1.02] transition-transform duration-500 cursor-pointer shadow-xl shadow-indigo-600/20">
+                     <span className="font-bold text-lg">Work with Us</span>
+                     <ChevronRight size={24} />
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  );
 }
