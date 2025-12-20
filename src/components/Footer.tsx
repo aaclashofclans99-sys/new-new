@@ -35,7 +35,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             >
               <img src="/logo.png" alt="Neptrax" className="h-12 w-12" />
               <span
-                className="font-bold bg-gradient-to-r from-[#22d3ee] via-[#0ea5e9] to-[#5391f5] bg-clip-text text-transparent"
+                className="text-2xl font-bold bg-gradient-to-r from-[#22d3ee] via-[#0ea5e9] to-[#5391f5] bg-clip-text text-transparent"
               >
                 Neptrax
               </span>
