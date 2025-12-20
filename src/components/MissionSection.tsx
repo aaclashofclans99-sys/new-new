@@ -298,9 +298,6 @@ export default function MissionSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <ScrollReveal1 direction="up">
               <div className="space-y-8">
-                <div className="inline-block px-4 py-1 rounded-full bg-indigo-600/20 text-indigo-400 text-xs font-black uppercase tracking-widest border border-indigo-600/30">
-                  Impact Focus
-                </div>
                 <h2 className="text-5xl lg:text-7xl font-black leading-none">Enhanced <br /><span className="text-gradient">Outcomes</span></h2>
                 <div className="flex gap-4 items-center">
                    <div className="h-px w-20 bg-indigo-500"></div>
