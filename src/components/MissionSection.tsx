@@ -104,71 +104,58 @@ export default function MissionSection() {
   return (
     <section className="bg-[#28282B] text-white overflow-hidden">
       
-      {/* 1. Hero / Projects Showcase Section */}
-      <div className="max-w-7xl mx-auto px-6 pt-32 pb-40">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <ScrollReveal direction="right" duration={0.8}>
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 aspect-[4/3] shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1000"
-                  alt="Modern Office"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#28282B]/60 to-transparent"></div>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          <div className="flex flex-col space-y-8">
-            <ScrollReveal direction="left">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-                Smooth experiences that <span className="text-gradient">engage customers</span> and grow business.
-              </h2>
-            </ScrollReveal>
-
-            <ScrollReveal direction="left" delay={200}>
-              <div className="glass-card p-8 rounded-3xl relative">
-                <Quote className="absolute top-4 right-8 text-indigo-500/20 w-16 h-16" />
-                <p className="text-xl md:text-2xl font-medium italic text-slate-200 mb-6 leading-relaxed">
-                  "Neptrax delivered beyond expectations. The website feels modern, fast, and truly professional. It changed how clients see our brand."
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center font-bold shadow-lg shadow-indigo-600/20">OH</div>
-                  <div>
-                    <h4 className="font-bold text-lg">Oliver Hayes</h4>
-                    <p className="text-slate-400 text-sm font-medium">CEO at PixelReach Studios</p>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* PLACEMENT RESTORED: Stats Section inside the grid */}
-            <div className="grid grid-cols-2 gap-6 pt-4">
-              <ScrollReveal direction="zoom" delay={400}>
-                <div className="relative p-6 rounded-2xl glass-card overflow-hidden group hover:border-indigo-500/30 transition-all">
-                  <div className="absolute -right-4 -top-4 w-20 h-20 bg-indigo-600/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
-                  <div className="text-4xl md:text-5xl font-black text-indigo-500 mb-1">
-                    <Counter from={0} to={97} suffix="%" />
-                  </div>
-                  <div className="text-slate-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Client Retention</div>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal direction="zoom" delay={500}>
-                <div className="relative p-6 rounded-2xl glass-card overflow-hidden group hover:border-violet-500/30 transition-all">
-                  <div className="absolute -right-4 -top-4 w-20 h-20 bg-violet-600/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
-                  <div className="text-4xl md:text-5xl font-black text-violet-500 mb-1">
-                    <Counter from={0} to={100} suffix="+" />
-                  </div>
-                  <div className="text-slate-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Global Projects</div>
-                </div>
-              </ScrollReveal>
+ {/* 1. Hero / Projects Showcase Section */}
+<div className="max-w-7xl mx-auto px-6 pt-32 pb-40">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+    {/* Left Column - Visual */}
+    <ScrollReveal direction="right" duration={0.8}>
+      <div className="sticky top-32">
+        <div className="relative group">
+          <div className="absolute -inset-3 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-all duration-1000"></div>
+          <div className="relative overflow-hidden rounded-2xl border border-white/5 aspect-[4/3] shadow-2xl shadow-indigo-900/20">
+            <img
+              src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1000"
+              alt="Modern Office"
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.02]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/70 via-transparent to-transparent"></div>
+            
+            {/* Floating Badge */}
+            <div className="absolute top-6 left-6 bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm animate-pulse-slow">
+              Chicago HQ
             </div>
           </div>
         </div>
+        
+        {/* Decorative Elements */}
+        <div className="flex justify-between mt-8 px-2">
+          <div className="w-16 h-1 bg-gradient-to-r from-violet-500 to-transparent rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-l from-indigo-500 to-transparent rounded-full"></div>
+        </div>
       </div>
+    </ScrollReveal>
+
+    {/* Right Column - Content */}
+    <div className="flex flex-col space-y-12">
+      {/* Main Headline */}
+      <ScrollReveal direction="left">
+        <div className="space-y-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-violet-900/30 to-indigo-900/30 border border-violet-500/20 mb-4">
+            <div className="w-2 h-2 bg-violet-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-violet-300 uppercase tracking-wider">
+              Projects Showcase
+            </span>
+          </div>
+          
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+            Smooth experiences that{' '}
+            <span className="text-gradient bg-gradient-to-r from-violet-400 to-indigo-400">
+              engage customers
+            </span>{' '}
+            and grow business.
+          </h2>
+        </div>
+      </ScrollReveal>
 
       {/* 2. Streamline Your Digital Flow (6 features) */}
       <div className="py-32 bg-[#1e1e21]/40 border-t border-white/5">
