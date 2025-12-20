@@ -202,6 +202,7 @@ export default function MissionSection() {
   </div>
 </div>
 </div>
+</div>
 
       {/* 2. Streamline Your Digital Flow (6 features) */}
       <div className="py-32 bg-[#1e1e21]/40 border-t border-white/5">
