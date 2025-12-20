@@ -236,9 +236,6 @@ export default function MissionSection() {
                 <div className="group h-full flex flex-col glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-500 border border-white/5 hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.3)]">
                   <div className="h-48 overflow-hidden relative">
                     <img src={feature.image} alt={feature.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-indigo-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                      <Zap className="text-white w-10 h-10" />
-                    </div>
                   </div>
                   <div className="p-8 flex-grow flex flex-col">
                     <div className="flex items-center gap-3 mb-4">
