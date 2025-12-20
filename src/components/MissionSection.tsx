@@ -415,9 +415,6 @@ export default function MissionSection() {
           {/* Right: Content */}
           <ScrollReveal1 direction="left" delay={200}>
             <div className="space-y-8">
-              <div className="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-black uppercase tracking-widest">
-                Our Story
-              </div>
               <h3 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight">
                 About <span className="text-blue-500">Neptrax</span>
               </h3>
