@@ -105,19 +105,6 @@ export default function Footer({ onNavigate }: FooterProps) {
                 </a>
               ))}
             </div>
-{/* bark.com image on its own line */}
-<a
-  href="https://bark.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="block mt-2"
->
-  <img
-    src="/bark.png"
-    alt="bark.com"
-    className="h-10 w-22"
-  />
-</a>
           </div>
         </div>
 
