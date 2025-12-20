@@ -122,9 +122,9 @@ export default function MissionSection() {
     { icon: ClipboardList, title: "Faster Delivery", desc: "Use structured templates to accelerate delivery while maintaining high standards." }
   ];
 
-  // More condensed radii for the consistent planetary look as requested
-  const innerRadius = 'clamp(95px, 12vw, 110px)';
-  const outerRadius = 'clamp(185px, 24vw, 210px)';
+  // Condensed radii for a tighter galactic aesthetic
+  const innerRadius = 'clamp(80px, 10vw, 95px)';
+  const outerRadius = 'clamp(165px, 22vw, 190px)';
 
   return (
     <section className="bg-[#28282B] text-white overflow-hidden">
@@ -237,7 +237,7 @@ export default function MissionSection() {
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal1 direction="up">
             <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Our <span className="text-indigo-400">Expertise</span></h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Premium <span className="text-indigo-400">Expertise</span></h2>
               <div className="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
             </div>
           </ScrollReveal1>
@@ -301,93 +301,105 @@ export default function MissionSection() {
         </div>
       </div>
 
-{/* 5. Enhanced Outcomes Section (Galactic Multi-Ring Orbit) */}
-<div className="py-32 bg-white/5 rounded-[4rem] mx-6 mb-16 overflow-hidden relative">
-  <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
-  <div className="max-w-7xl mx-auto px-6">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"> {/* Reduced gap-24 to gap-16 */}
-      
-      {/* Left Content - Moved to the right */}
-      <ScrollReveal1 direction="right">
-        <div className="space-y-12 pl-8"> {/* Added pl-8 to move content right */}
-          <div className="space-y-6">
-            <h2 className="text-6xl lg:text-8xl font-black leading-[0.9] tracking-tighter">
-              Enhanced <br /><span className="text-gradient">Outcomes</span>
-            </h2>
-            <div className="flex gap-6 items-center">
-              <p className="text-indigo-400 font-black uppercase tracking-[0.5em] text-sm md:text-base">
-                Fast • Functional • Effective
-              </p>
-            </div>
-          </div>
+      {/* 5. Enhanced Outcomes Section (Galactic Multi-Ring Orbit) */}
+      <div className="py-32 bg-white/5 rounded-[4rem] mx-6 mb-16 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            
+            {/* Left Content - Enhanced and Larger */}
+            <ScrollReveal1 direction="right">
+              <div className="space-y-12">
+                <div className="space-y-6">
+                  <h2 className="text-6xl lg:text-8xl font-black leading-[0.9] tracking-tighter">
+                    Enhanced <br /><span className="text-gradient">Outcomes</span>
+                  </h2>
+                  <div className="flex gap-6 items-center">
+                    <p className="text-indigo-400 font-black uppercase tracking-[0.5em] text-sm md:text-base">
+                      Fast • Functional • Effective
+                    </p>
+                  </div>
+                </div>
 
-          <p className="text-slate-300 text-xl md:text-2xl leading-relaxed font-medium max-w-xl">
-            We blend technical mastery with aesthetic precision to elevate your digital presence. Our outcomes aren't just seen—they're felt.
-          </p>
+                <p className="text-slate-300 text-xl md:text-2xl leading-relaxed font-medium max-w-xl">
+                  We blend technical mastery with aesthetic precision to elevate your digital presence. Our outcomes aren't just seen—they're felt.
+                </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pt-6">
-            <div className="space-y-2">
-              <p className="text-5xl font-black text-white"><Counter from={0} to={100} suffix="+" /></p>
-              <p className="text-xs text-slate-500 uppercase font-black tracking-[0.2em]">Sites Built</p>
-            </div>
-            <div className="space-y-2">
-              <p className="text-5xl font-black text-white">24/7</p>
-              <p className="text-xs text-slate-500 uppercase font-black tracking-[0.2em]">Support</p>
-            </div>
-            <div className="space-y-2">
-              <p className="text-5xl font-black text-white"><Counter from={0} to={50} suffix="+" /></p>
-              <p className="text-xs text-slate-500 uppercase font-black tracking-[0.2em]">Verified Reviews</p>
-            </div>
-          </div>
-        </div>
-      </ScrollReveal1>
-
-      {/* Right Side: Galactic Multi-Ring Orbit Animation */}
-      <div className="relative flex items-center justify-center min-h-[500px]">
-        <div className="galactic-container">
-          {/* Central Anchor - Smaller and Transparent */}
-          <div className="galactic-anchor">
-            <img src="/logo.png" alt="Company Logo" />
-          </div>
-
-          {/* Inner Ring (6 logos, radius CW) */}
-          <div className="orbit-ring ring-inner">
-            {techInner.map((tech, i) => (
-              <div 
-                key={tech.name} 
-                className="orbit-node"
-                style={{ 
-                  transform: `rotate(${i * (360 / techInner.length)}deg) translateY(${innerRadius})` 
-                } as any}
-              >
-                <div className="orbit-icon">
-                  <img src={tech.logo} alt={tech.name} />
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pt-6">
+                  <div className="space-y-2">
+                    <p className="text-5xl font-black text-white"><Counter from={0} to={100} suffix="+" /></p>
+                    <p className="text-xs text-slate-500 uppercase font-black tracking-[0.2em]">Sites Built</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-5xl font-black text-white">24/7</p>
+                    <p className="text-xs text-slate-500 uppercase font-black tracking-[0.2em]">Support</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-5xl font-black text-white"><Counter from={0} to={50} suffix="+" /></p>
+                    <p className="text-xs text-slate-500 uppercase font-black tracking-[0.2em]">Verified Reviews</p>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </ScrollReveal1>
 
-          {/* Outer Ring (10 logos, CCW) - Claude AI instead of ChatGPT */}
-          <div className="orbit-ring ring-outer">
-            {techOuter.map((tech, i) => (
-              <div 
-                key={tech.name} 
-                className="orbit-node"
-                style={{ 
-                  transform: `rotate(${i * (360 / techOuter.length)}deg) translateY(${outerRadius})` 
-                } as any}
-              >
-                <div className="orbit-icon">
-                  <img src={tech.logo} alt={tech.name} />
+            {/* Right Side: Galactic Multi-Ring Orbit Animation */}
+            <div className="relative flex items-center justify-center min-h-[500px]">
+              <div className="galactic-container">
+                {/* Central Anchor - Smaller and Transparent */}
+                <div className="galactic-anchor">
+                  <img src="https://cdn.simpleicons.org/google/4285F4" alt="Company Logo" />
+                </div>
+
+                {/* Inner Ring (CW) */}
+                <div className="orbit-ring ring-inner">
+                  {techInner.map((tech, i) => {
+                    const angle = i * (360 / techInner.length);
+                    return (
+                      <div 
+                        key={tech.name} 
+                        className="orbit-node"
+                        style={{ 
+                          transform: `rotate(${angle}deg) translateY(${innerRadius})` 
+                        } as any}
+                      >
+                        {/* Static straightening wrapper + Dynamic counter-rotation animation */}
+                        <div style={{ transform: `rotate(${-angle}deg)` }}>
+                          <div className="orbit-icon">
+                            <img src={tech.logo} alt={tech.name} />
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Outer Ring (CCW) */}
+                <div className="orbit-ring ring-outer">
+                  {techOuter.map((tech, i) => {
+                    const angle = i * (360 / techOuter.length);
+                    return (
+                      <div 
+                        key={tech.name} 
+                        className="orbit-node"
+                        style={{ 
+                          transform: `rotate(${angle}deg) translateY(${outerRadius})` 
+                        } as any}
+                      >
+                        {/* Static straightening wrapper + Dynamic counter-rotation animation */}
+                        <div style={{ transform: `rotate(${-angle}deg)` }}>
+                          <div className="orbit-icon">
+                            <img src={tech.logo} alt={tech.name} />
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
       {/* 6. About Neptrax Section */}
       <div className="py-24 max-w-7xl mx-auto px-6 mb-24">
