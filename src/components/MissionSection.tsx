@@ -191,7 +191,8 @@ export default function MissionSection() {
   </ScrollReveal>
 </div>
 </div>
-          
+</div>
+        
       {/* 2. Streamline Your Digital Flow (6 features) */}
       <div className="py-32 bg-[#1e1e21]/40 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
