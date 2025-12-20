@@ -260,11 +260,11 @@ export default function MissionSection() {
         </div>
       </div>
 
-       {/* 4. Why Choose Neptrax? */}
+      {/* 4. Why Choose Neptrax? */}
       <div className="py-32 relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/5 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <ScrollReveal direction="up" delay={0} duration={600}>
+          <ScrollReveal direction="up">
             <div className="text-center mb-24">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Neptrax?</h2>
               <p className="text-indigo-400 font-bold uppercase tracking-[0.3em] text-xs">Global Standards • Fast Execution</p>
@@ -276,15 +276,13 @@ export default function MissionSection() {
               <ScrollReveal 
                 key={i} 
                 direction={i % 2 === 0 ? "right" : "left"} 
-                delay={i * 100}
-                duration={500}
-                distance="50px"
+                delay={i * 50}
               >
-                <div className="p-8 rounded-2xl glass-card border border-white/5 hover:border-indigo-500/40 transition-all duration-300 ease-out group hover:scale-[1.02]">
+                <div className="p-8 rounded-2xl glass-card border border-white/5 hover:border-indigo-500/40 transition-colors group">
                   <div className="flex items-start gap-4">
-                    <div className="w-2 h-8 bg-indigo-500 group-hover:h-12 transition-all duration-300 ease-out rounded-full shrink-0"></div>
+                    <div className="w-2 h-8 bg-indigo-500 group-hover:h-12 transition-all rounded-full shrink-0"></div>
                     <div>
-                      <h4 className="text-lg font-bold mb-2 group-hover:text-indigo-300 transition-colors duration-300 ease-out">{benefit.title}</h4>
+                      <h4 className="text-lg font-bold mb-2 group-hover:text-indigo-300 transition-colors">{benefit.title}</h4>
                       <p className="text-slate-400 text-sm leading-relaxed">{benefit.description}</p>
                     </div>
                   </div>
