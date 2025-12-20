@@ -128,7 +128,24 @@ export default function MissionSection() {
     </h2>
   </ScrollReveal>
 
-  {/* PLACEMENT RESTORED: Stats Section now on the right */}
+  <ScrollReveal direction="bottom" delay={200}>
+    <div className="glass-card p-8 rounded-3xl relative overflow-hidden group">
+      {/* Smooth fade-in gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-purple-500/5 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
+      
+      <p className="text-xl md:text-2xl font-medium italic text-slate-200 mb-6 leading-relaxed relative z-10 transform transition-all duration-500 ease-out hover:scale-[1.02]">
+        "Neptrax delivered beyond expectations. The website feels modern, fast, and truly professional. It changed how clients see our brand."
+      </p>
+      <div className="flex items-center gap-4 relative z-10">
+        <div>
+          <h4 className="font-bold text-lg">Oliver Hayes</h4>
+          <p className="text-slate-400 text-sm font-medium">CEO at PixelReach Studios</p>
+        </div>
+      </div>
+    </div>
+  </ScrollReveal>
+
+  {/* PLACEMENT RESTORED: Stats Section inside the grid */}
   <div className="grid grid-cols-2 gap-6 pt-4">
     <ScrollReveal direction="zoom" delay={400}>
       <div className="relative p-6 rounded-2xl overflow-hidden group hover:border-indigo-500/30 transition-all duration-500">
@@ -172,25 +189,6 @@ export default function MissionSection() {
       </div>
     </ScrollReveal>
   </div>
-
-  <ScrollReveal direction="bottom" delay={200}>
-    <div className="glass-card p-8 rounded-3xl relative overflow-hidden group">
-      {/* Smooth fade-in gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-purple-500/5 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
-      
-      <p className="text-xl md:text-2xl font-medium italic text-slate-200 mb-6 leading-relaxed relative z-10 transform transition-all duration-500 ease-out hover:scale-[1.02]">
-        "Neptrax delivered beyond expectations. The website feels modern, fast, and truly professional. It changed how clients see our brand."
-      </p>
-      <div className="flex items-center gap-4 relative z-10">
-        <div>
-          <h4 className="font-bold text-lg">Oliver Hayes</h4>
-          <p className="text-slate-400 text-sm font-medium">CEO at PixelReach Studios</p>
-        </div>
-      </div>
-    </div>
-  </ScrollReveal>
-</div>
-</div>
 </div>
         
       {/* 2. Streamline Your Digital Flow (6 features) */}
