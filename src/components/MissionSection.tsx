@@ -260,38 +260,167 @@ export default function MissionSection() {
         </div>
       </div>
 
-      {/* 4. Why Choose Neptrax? */}
-      <div className="py-32 relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/5 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <ScrollReveal direction="up">
-            <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Neptrax?</h2>
-              <p className="text-indigo-400 font-bold uppercase tracking-[0.3em] text-xs">Global Standards • Fast Execution</p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, i) => (
-              <ScrollReveal 
-                key={i} 
-                direction={i % 2 === 0 ? "right" : "left"} 
-                delay={i * 50}
-              >
-                <div className="p-8 rounded-2xl glass-card border border-white/5 hover:border-indigo-500/40 transition-colors group">
-                  <div className="flex items-start gap-4">
-                    <div className="w-2 h-8 bg-indigo-500 group-hover:h-12 transition-all rounded-full shrink-0"></div>
-                    <div>
-                      <h4 className="text-lg font-bold mb-2 group-hover:text-indigo-300 transition-colors">{benefit.title}</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">{benefit.description}</p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+{/* 4. Why Choose Neptrax? */}
+<div className="py-32 relative overflow-hidden">
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+  
+  {/* Subtle animated gradient background */}
+  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-indigo-900/5 to-transparent animate-gradient-flow"></div>
+  
+  <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <ScrollReveal 
+      direction="up"
+      duration={1200}
+      easing="cubic-bezier(0.16, 1, 0.3, 1)"
+      distance="40px"
+      scale={0.98}
+    >
+      <div className="text-center mb-24">
+        <div className="inline-block overflow-hidden">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-slide-up delay-100 opacity-0 translate-y-8">
+            Why Choose Neptrax?
+          </h2>
+        </div>
+        <div className="inline-block overflow-hidden">
+          <p className="text-indigo-400 font-bold uppercase tracking-[0.3em] text-xs animate-slide-up delay-200 opacity-0 translate-y-8">
+            Global Standards • Fast Execution
+          </p>
         </div>
       </div>
+    </ScrollReveal>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {benefits.map((benefit, i) => (
+        <ScrollReveal 
+          key={i} 
+          direction={i % 2 === 0 ? "right" : "left"} 
+          delay={i * 100}
+          duration={1000}
+          easing="cubic-bezier(0.16, 1, 0.3, 1)"
+          distance="60px"
+          opacity={0}
+          scale={0.95}
+        >
+          <div className="p-8 rounded-2xl glass-card border border-white/5 animate-float">
+            <div className="flex items-start gap-4">
+              <div className="relative">
+                <div className="w-2 h-8 bg-gradient-to-b from-indigo-500 to-indigo-300 rounded-full shrink-0 animate-pulse-gentle"></div>
+                <div className="absolute inset-0 w-2 h-8 bg-gradient-to-b from-indigo-400 to-indigo-200 rounded-full shrink-0 animate-shimmer opacity-0"></div>
+              </div>
+              <div className="overflow-hidden">
+                <h4 className="text-lg font-bold mb-2 animate-fade-in-up delay-300 opacity-0 translate-y-4">
+                  {benefit.title}
+                </h4>
+                <p className="text-slate-400 text-sm leading-relaxed animate-fade-in-up delay-500 opacity-0 translate-y-4">
+                  {benefit.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style jsx>{`
+  @keyframes gradientFlow {
+    0%, 100% { opacity: 0.05; transform: translateX(0%) translateY(0%); }
+    33% { opacity: 0.08; transform: translateX(1%) translateY(-1%); }
+    66% { opacity: 0.05; transform: translateX(-1%) translateY(1%); }
+  }
+  
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px) scale(0.98);
+      filter: blur(4px);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(10px);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-4px); }
+  }
+  
+  @keyframes pulseGentle {
+    0%, 100% { opacity: 1; transform: scaleY(1); }
+    50% { opacity: 0.8; transform: scaleY(0.95); }
+  }
+  
+  @keyframes shimmer {
+    0% { opacity: 0; transform: translateX(-100%); }
+    20% { opacity: 0.5; }
+    50% { opacity: 0.8; transform: translateX(100%); }
+    100% { opacity: 0; transform: translateX(100%); }
+  }
+  
+  .animate-gradient-flow {
+    animation: gradientFlow 15s ease-in-out infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-gentle {
+    animation: pulseGentle 3s ease-in-out infinite;
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-500 { animation-delay: 500ms; }
+  
+  .glass-card {
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 12px 40px rgba(99, 102, 241, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+`}</style>
 
       {/* 5. Enhanced Outcomes & Chicago Office Section */}
       <div className="py-32 bg-white/5 rounded-[4rem] mx-6 mb-24">
