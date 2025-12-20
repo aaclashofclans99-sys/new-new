@@ -121,87 +121,74 @@ export default function MissionSection() {
             </div>
           </ScrollReveal>
 
-<div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-  {/* Content section - now on LEFT */}
-  <div className="flex-1">
-    <div className="flex flex-col space-y-8">
-      <ScrollReveal direction="left">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-          Providing Smooth Client Experiences
-        </h2>
-      </ScrollReveal>
+<div className="flex flex-col space-y-8">
+  <ScrollReveal direction="left">
+    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+      Providing Smooth Client Experiences
+    </h2>
+  </ScrollReveal>
 
-      <ScrollReveal direction="bottom" delay={200}>
-        <div className="glass-card p-8 rounded-3xl relative overflow-hidden group">
-          {/* Smooth fade-in gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-purple-500/5 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
-          
-          <p className="text-xl md:text-2xl font-medium italic text-slate-200 mb-6 leading-relaxed relative z-10 transform transition-all duration-500 ease-out hover:scale-[1.02]">
-            "Neptrax delivered beyond expectations. The website feels modern, fast, and truly professional. It changed how clients see our brand."
-          </p>
-          <div className="flex items-center gap-4 relative z-10">
-            <div>
-              <h4 className="font-bold text-lg">Oliver Hayes</h4>
-              <p className="text-slate-400 text-sm font-medium">CEO at PixelReach Studios</p>
-            </div>
+  {/* PLACEMENT RESTORED: Stats Section now on the right */}
+  <div className="grid grid-cols-2 gap-6 pt-4">
+    <ScrollReveal direction="zoom" delay={400}>
+      <div className="relative p-6 rounded-2xl overflow-hidden group hover:border-indigo-500/30 transition-all duration-500">
+        {/* Slick Card Background with gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/70 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-2xl" />
+        
+        {/* Animated gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-indigo-500/10 to-indigo-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
+        
+        {/* Floating accent elements */}
+        <div className="absolute -right-4 -top-4 w-20 h-20 bg-indigo-600/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-700 ease-out" />
+        <div className="absolute left-4 bottom-4 w-12 h-12 bg-indigo-400/5 rounded-full blur-xl group-hover:scale-125 transition-all duration-700 ease-out delay-100" />
+        
+        <div className="relative z-10">
+          <div className="text-4xl md:text-5xl font-black text-indigo-500 mb-1 transform transition-all duration-500 group-hover:scale-105">
+            <Counter from={0} to={97} suffix="%" />
           </div>
+          <div className="text-slate-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Client Retention</div>
         </div>
-      </ScrollReveal>
+      </div>
+    </ScrollReveal>
 
-      {/* PLACEMENT RESTORED: Stats Section inside the grid */}
-      <div className="grid grid-cols-2 gap-6 pt-4">
-        <ScrollReveal direction="zoom" delay={400}>
-          <div className="relative p-6 rounded-2xl overflow-hidden group hover:border-indigo-500/30 transition-all duration-500">
-            {/* Slick Card Background with gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/70 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-2xl" />
-            
-            {/* Animated gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-indigo-500/10 to-indigo-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
-            
-            {/* Floating accent elements */}
-            <div className="absolute -right-4 -top-4 w-20 h-20 bg-indigo-600/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-700 ease-out" />
-            <div className="absolute left-4 bottom-4 w-12 h-12 bg-indigo-400/5 rounded-full blur-xl group-hover:scale-125 transition-all duration-700 ease-out delay-100" />
-            
-            <div className="relative z-10">
-              <div className="text-4xl md:text-5xl font-black text-indigo-500 mb-1 transform transition-all duration-500 group-hover:scale-105">
-                <Counter from={0} to={97} suffix="%" />
-              </div>
-              <div className="text-slate-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Client Retention</div>
-            </div>
+    <ScrollReveal direction="zoom" delay={500}>
+      <div className="relative p-6 rounded-2xl overflow-hidden group hover:border-violet-500/30 transition-all duration-500">
+        {/* Slick Card Background with gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/70 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-2xl" />
+        
+        {/* Animated gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-violet-500/10 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
+        
+        {/* Floating accent elements */}
+        <div className="absolute -right-4 -top-4 w-20 h-20 bg-violet-600/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-700 ease-out" />
+        <div className="absolute left-4 bottom-4 w-12 h-12 bg-violet-400/5 rounded-full blur-xl group-hover:scale-125 transition-all duration-700 ease-out delay-100" />
+        
+        <div className="relative z-10">
+          <div className="text-4xl md:text-5xl font-black text-violet-500 mb-1 transform transition-all duration-500 group-hover:scale-105">
+            <Counter from={0} to={100} suffix="+" />
           </div>
-        </ScrollReveal>
+          <div className="text-slate-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Global Projects</div>
+        </div>
+      </div>
+    </ScrollReveal>
+  </div>
 
-        <ScrollReveal direction="zoom" delay={500}>
-          <div className="relative p-6 rounded-2xl overflow-hidden group hover:border-violet-500/30 transition-all duration-500">
-            {/* Slick Card Background with gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/70 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-2xl" />
-            
-            {/* Animated gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-violet-500/10 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
-            
-            {/* Floating accent elements */}
-            <div className="absolute -right-4 -top-4 w-20 h-20 bg-violet-600/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-700 ease-out" />
-            <div className="absolute left-4 bottom-4 w-12 h-12 bg-violet-400/5 rounded-full blur-xl group-hover:scale-125 transition-all duration-700 ease-out delay-100" />
-            
-            <div className="relative z-10">
-              <div className="text-4xl md:text-5xl font-black text-violet-500 mb-1 transform transition-all duration-500 group-hover:scale-105">
-                <Counter from={0} to={100} suffix="+" />
-              </div>
-              <div className="text-slate-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Global Projects</div>
-            </div>
-          </div>
-        </ScrollReveal>
+  <ScrollReveal direction="bottom" delay={200}>
+    <div className="glass-card p-8 rounded-3xl relative overflow-hidden group">
+      {/* Smooth fade-in gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-purple-500/5 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
+      
+      <p className="text-xl md:text-2xl font-medium italic text-slate-200 mb-6 leading-relaxed relative z-10 transform transition-all duration-500 ease-out hover:scale-[1.02]">
+        "Neptrax delivered beyond expectations. The website feels modern, fast, and truly professional. It changed how clients see our brand."
+      </p>
+      <div className="flex items-center gap-4 relative z-10">
+        <div>
+          <h4 className="font-bold text-lg">Oliver Hayes</h4>
+          <p className="text-slate-400 text-sm font-medium">CEO at PixelReach Studios</p>
+        </div>
       </div>
     </div>
-  </div>
-
-  {/* Image section - now on RIGHT */}
-  <div className="flex-1">
-    {/* Your existing image component goes here */}
-    {/* This stays exactly as it was, just positioned on the right */}
-  </div>
-</div>
-</div>
+  </ScrollReveal>
 </div>
 
       {/* 2. Streamline Your Digital Flow (6 features) */}
