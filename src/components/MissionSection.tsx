@@ -322,6 +322,7 @@ export default function MissionSection() {
                      <div className="text-center">
                      <p className="text-3xl font-bold text-white">8+</p>
                      <p className="text-xs text-slate-500 uppercase font-bold tracking-tighter">Years Experience</p>
+                    </div>
                    </div>
                 </div>
               </div>
