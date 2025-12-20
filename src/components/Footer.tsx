@@ -108,7 +108,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           </div>
         </div>
 
-        <div className="border-t border-white/8 pt-8 flex flex-col items-center justify-center text-center">
+        <div className="border-t border-white/8 pt-8 flex flex-col items-center justify-center text-center ml-4">
           <p className="text-[#94a3b8] text-sm">
             © 2025 Neptrax. All rights reserved.
           </p>
