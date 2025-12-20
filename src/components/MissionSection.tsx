@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useInView, useAnimation, animate } from 'framer-motion';
 import {
@@ -18,7 +17,7 @@ import {
   ChevronRight,
   Quote
 } from 'lucide-react';
-import ScrollReveal from './ScrollReveal';
+import ScrollReveal1 from './ScrollReveal1';
 
 const Counter = ({ from, to, duration = 2, suffix = "" }: { from: number, to: number, duration?: number, suffix?: string }) => {
   const [count, setCount] = useState(from);
@@ -107,7 +106,7 @@ export default function MissionSection() {
       {/* 1. Hero / Projects Showcase Section */}
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-40">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <ScrollReveal direction="right" duration={0.8}>
+          <ScrollReveal1 direction="right" duration={0.8}>
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative overflow-hidden rounded-2xl border border-white/10 aspect-[4/3] shadow-2xl">
@@ -119,95 +118,95 @@ export default function MissionSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#28282B]/60 to-transparent"></div>
               </div>
             </div>
-          </ScrollReveal>
+          </ScrollReveal1>
 
-<div className="flex flex-col space-y-8">
-  <ScrollReveal direction="left">
-    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-      Providing Smooth Client Experiences
-    </h2>
-  </ScrollReveal>
+          <div className="flex flex-col space-y-8">
+            <ScrollReveal1 direction="left">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+                Providing Smooth Client Experiences
+              </h2>
+            </ScrollReveal1>
 
-  <ScrollReveal direction="bottom" delay={200}>
-    <div className="glass-card p-8 rounded-3xl relative overflow-hidden group">
-      {/* Smooth fade-in gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-purple-500/5 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
-      
-      <p className="text-xl md:text-2xl font-medium italic text-slate-200 mb-6 leading-relaxed relative z-10 transform transition-all duration-500 ease-out hover:scale-[1.02]">
-        "Neptrax delivered beyond expectations. The website feels modern, fast, and truly professional. It changed how clients see our brand."
-      </p>
-      <div className="flex items-center gap-4 relative z-10">
-        <div>
-          <h4 className="font-bold text-lg">Oliver Hayes</h4>
-          <p className="text-slate-400 text-sm font-medium">CEO at PixelReach Studios</p>
-        </div>
-      </div>
-    </div>
-  </ScrollReveal>
+            <ScrollReveal1 direction="down" delay={200}>
+              <div className="glass-card p-8 rounded-3xl relative overflow-hidden group">
+                {/* Smooth fade-in gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-purple-500/5 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
+                
+                <p className="text-xl md:text-2xl font-medium italic text-slate-200 mb-6 leading-relaxed relative z-10 transform transition-all duration-500 ease-out hover:scale-[1.02]">
+                  "Neptrax delivered beyond expectations. The website feels modern, fast, and truly professional. It changed how clients see our brand."
+                </p>
+                <div className="flex items-center gap-4 relative z-10">
+                  <div>
+                    <h4 className="font-bold text-lg">Oliver Hayes</h4>
+                    <p className="text-slate-400 text-sm font-medium">CEO at PixelReach Studios</p>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal1>
 
-  {/* PLACEMENT RESTORED: Stats Section inside the grid */}
-  <div className="grid grid-cols-2 gap-6 pt-4">
-    <ScrollReveal direction="zoom" delay={400}>
-      <div className="relative p-6 rounded-2xl overflow-hidden group hover:border-indigo-500/30 transition-all duration-500">
-        {/* Slick Card Background with gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/70 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-2xl" />
-        
-        {/* Animated gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-indigo-500/10 to-indigo-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
-        
-        {/* Floating accent elements */}
-        <div className="absolute -right-4 -top-4 w-20 h-20 bg-indigo-600/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-700 ease-out" />
-        <div className="absolute left-4 bottom-4 w-12 h-12 bg-indigo-400/5 rounded-full blur-xl group-hover:scale-125 transition-all duration-700 ease-out delay-100" />
-        
-        <div className="relative z-10">
-          <div className="text-4xl md:text-5xl font-black text-indigo-500 mb-1 transform transition-all duration-500 group-hover:scale-105">
-            <Counter from={0} to={97} suffix="%" />
+            {/* Stats Section inside the grid */}
+            <div className="grid grid-cols-2 gap-6 pt-4">
+              <ScrollReveal1 direction="zoom" delay={400}>
+                <div className="relative p-6 rounded-2xl overflow-hidden group hover:border-indigo-500/30 transition-all duration-500">
+                  {/* Slick Card Background with gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/70 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-2xl" />
+                  
+                  {/* Animated gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-indigo-500/10 to-indigo-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
+                  
+                  {/* Floating accent elements */}
+                  <div className="absolute -right-4 -top-4 w-20 h-20 bg-indigo-600/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-700 ease-out" />
+                  <div className="absolute left-4 bottom-4 w-12 h-12 bg-indigo-400/5 rounded-full blur-xl group-hover:scale-125 transition-all duration-700 ease-out delay-100" />
+                  
+                  <div className="relative z-10">
+                    <div className="text-4xl md:text-5xl font-black text-indigo-500 mb-1 transform transition-all duration-500 group-hover:scale-105">
+                      <Counter from={0} to={97} suffix="%" />
+                    </div>
+                    <div className="text-slate-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Client Retention</div>
+                  </div>
+                </div>
+              </ScrollReveal1>
+
+              <ScrollReveal1 direction="zoom" delay={500}>
+                <div className="relative p-6 rounded-2xl overflow-hidden group hover:border-violet-500/30 transition-all duration-500">
+                  {/* Slick Card Background with gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/70 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-2xl" />
+                  
+                  {/* Animated gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-violet-500/10 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
+                  
+                  {/* Floating accent elements */}
+                  <div className="absolute -right-4 -top-4 w-20 h-20 bg-violet-600/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-700 ease-out" />
+                  <div className="absolute left-4 bottom-4 w-12 h-12 bg-violet-400/5 rounded-full blur-xl group-hover:scale-125 transition-all duration-700 ease-out delay-100" />
+                  
+                  <div className="relative z-10">
+                    <div className="text-4xl md:text-5xl font-black text-violet-500 mb-1 transform transition-all duration-500 group-hover:scale-105">
+                      <Counter from={0} to={100} suffix="+" />
+                    </div>
+                    <div className="text-slate-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Global Projects</div>
+                  </div>
+                </div>
+              </ScrollReveal1>
+            </div>
           </div>
-          <div className="text-slate-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Client Retention</div>
         </div>
       </div>
-    </ScrollReveal>
-
-    <ScrollReveal direction="zoom" delay={500}>
-      <div className="relative p-6 rounded-2xl overflow-hidden group hover:border-violet-500/30 transition-all duration-500">
-        {/* Slick Card Background with gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/70 to-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-2xl" />
-        
-        {/* Animated gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-violet-500/10 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
-        
-        {/* Floating accent elements */}
-        <div className="absolute -right-4 -top-4 w-20 h-20 bg-violet-600/10 rounded-full blur-2xl group-hover:scale-150 transition-all duration-700 ease-out" />
-        <div className="absolute left-4 bottom-4 w-12 h-12 bg-violet-400/5 rounded-full blur-xl group-hover:scale-125 transition-all duration-700 ease-out delay-100" />
-        
-        <div className="relative z-10">
-          <div className="text-4xl md:text-5xl font-black text-violet-500 mb-1 transform transition-all duration-500 group-hover:scale-105">
-            <Counter from={0} to={100} suffix="+" />
-          </div>
-          <div className="text-slate-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Global Projects</div>
-        </div>
-      </div>
-    </ScrollReveal>
-  </div>
-</div>
-</div>
-</div>
         
       {/* 2. Streamline Your Digital Flow (6 features) */}
       <div className="py-32 bg-[#1e1e21]/40 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <ScrollReveal direction="up">
+          <ScrollReveal1 direction="up">
             <div className="text-center mb-24">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Streamline Your <span className="text-indigo-400">Digital Flow</span></h2>
               <p className="text-slate-400 text-lg max-w-2xl mx-auto">
                 Take full control of your digital presence with tools designed for speed, clarity, and precision.
               </p>
             </div>
-          </ScrollReveal>
+          </ScrollReveal1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {flowFeatures.map((item, i) => (
-              <ScrollReveal key={i} direction="up" delay={i * 100}>
+              <ScrollReveal1 key={i} direction="up" delay={i * 100}>
                 <div className="group p-8 rounded-3xl glass-card hover:bg-white/5 transition-all duration-300 border border-white/5 hover:border-indigo-500/30">
                   <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6 group-hover:scale-110 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500">
                     <item.icon size={28} />
@@ -215,7 +214,7 @@ export default function MissionSection() {
                   <h3 className="text-xl font-bold mb-3 group-hover:text-indigo-300 transition-colors">{item.title}</h3>
                   <p className="text-slate-400 leading-relaxed text-sm">{item.desc}</p>
                 </div>
-              </ScrollReveal>
+              </ScrollReveal1>
             ))}
           </div>
         </div>
@@ -224,16 +223,16 @@ export default function MissionSection() {
       {/* 3. Services / Offerings Section */}
       <div className="bg-[#1e1e21] py-32">
         <div className="max-w-7xl mx-auto px-6">
-          <ScrollReveal direction="up">
+          <ScrollReveal1 direction="up">
             <div className="text-center mb-24">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Premium <span className="text-indigo-400">Expertise</span></h2>
               <div className="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
             </div>
-          </ScrollReveal>
+          </ScrollReveal1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, idx) => (
-              <ScrollReveal key={idx} direction="up" delay={idx * 100}>
+              <ScrollReveal1 key={idx} direction="up" delay={idx * 100}>
                 <div className="group h-full flex flex-col glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-500 border border-white/5 hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.3)]">
                   <div className="h-48 overflow-hidden relative">
                     <img src={feature.image} alt={feature.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
@@ -254,7 +253,7 @@ export default function MissionSection() {
                     </a>
                   </div>
                 </div>
-              </ScrollReveal>
+              </ScrollReveal1>
             ))}
           </div>
         </div>
@@ -264,16 +263,16 @@ export default function MissionSection() {
       <div className="py-32 relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/5 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <ScrollReveal direction="up">
+          <ScrollReveal1 direction="up">
             <div className="text-center mb-24">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Neptrax?</h2>
               <p className="text-indigo-400 font-bold uppercase tracking-[0.3em] text-xs">Global Standards • Fast Execution</p>
             </div>
-          </ScrollReveal>
+          </ScrollReveal1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, i) => (
-              <ScrollReveal 
+              <ScrollReveal1 
                 key={i} 
                 direction={i % 2 === 0 ? "right" : "left"} 
                 delay={i * 50}
@@ -287,7 +286,7 @@ export default function MissionSection() {
                     </div>
                   </div>
                 </div>
-              </ScrollReveal>
+              </ScrollReveal1>
             ))}
           </div>
         </div>
@@ -297,7 +296,7 @@ export default function MissionSection() {
       <div className="py-32 bg-white/5 rounded-[4rem] mx-6 mb-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <ScrollReveal direction="up">
+            <ScrollReveal1 direction="up">
               <div className="space-y-8">
                 <div className="inline-block px-4 py-1 rounded-full bg-indigo-600/20 text-indigo-400 text-xs font-black uppercase tracking-widest border border-indigo-600/30">
                   Impact Focus
@@ -325,9 +324,9 @@ export default function MissionSection() {
                    </div>
                 </div>
               </div>
-            </ScrollReveal>
+            </ScrollReveal1>
 
-            <ScrollReveal direction="zoom" delay={300}>
+            <ScrollReveal1 direction="zoom" delay={300}>
               <div className="relative group">
                 <div className="absolute -inset-4 bg-gradient-to-tr from-indigo-600/30 via-violet-600/30 to-blue-600/30 blur-2xl opacity-50"></div>
                 <div className="relative glass-card rounded-[3rem] p-12 overflow-hidden border border-white/10 group-hover:border-indigo-500/50 transition-all duration-500">
@@ -347,7 +346,7 @@ export default function MissionSection() {
                   </div>
                 </div>
               </div>
-            </ScrollReveal>
+            </ScrollReveal1>
           </div>
         </div>
       </div>
