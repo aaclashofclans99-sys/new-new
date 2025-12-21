@@ -358,7 +358,7 @@ export default function MissionSection() {
                         <h3 className="text-xl font-bold text-[#f1f5f9]">{feature.title}</h3>
                       </div>
                       <p className="text-[#94a3b8] text-sm leading-relaxed mb-8 flex-grow">{feature.description}</p>
-                      <a href="#" className="inline-flex items-center gap-2 text-[#2563eb] font-bold group/link">
+                      <a href="services" className="inline-flex items-center gap-2 text-[#2563eb] font-bold group/link">
                         Learn More <ChevronRight size={16} className="transition-transform group-hover/link:translate-x-1" />
                       </a>
                     </div>
