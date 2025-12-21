@@ -241,7 +241,7 @@ export default function MissionSection() {
             <ScrollReveal1 direction="right" duration={0.8}>
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#2563eb] to-[#1e3a8a] rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                <div className="relative overflow-hidden rounded-2xl border border-white/10 aspect-[4/4] shadow-2xl">
+                <div className="relative overflow-hidden rounded-2xl border border-white/10 aspect-[4/3] shadow-2xl">
                   <img
                     src="/home.png"
                     alt="Modern Office"
