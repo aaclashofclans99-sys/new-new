@@ -124,10 +124,10 @@ export default function MissionSection() {
   const outerRadius = 'clamp(165px, 22vw, 190px)';
 
   return (
-    <section className="bg-[#28282B] text-white overflow-hidden">
+    <section className="bg-[#0d1117] text-white overflow-hidden">
       
       {/* 1. Hero / Projects Showcase Section */}
-      <div className="max-w-7xl mx-auto px-6 pt-32 pb-40">
+      <div className="max-w-7xl mx-auto px-6 pt-32 pb-40 bg-[#0d1117]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <ScrollReveal1 direction="right" duration={0.8}>
             <div className="relative group">
@@ -138,7 +138,7 @@ export default function MissionSection() {
                   alt="Modern Office"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#28282B]/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117]/60 to-transparent"></div>
               </div>
             </div>
           </ScrollReveal1>
@@ -226,7 +226,7 @@ export default function MissionSection() {
       </div>
 
       {/* 3. Our Premium Expertise Section */}
-      <div className="bg-[#0d1117] py-32">
+      <div className="bg-[#0d1117] py-32 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal1 direction="up">
             <div className="text-center mb-24">
@@ -262,7 +262,7 @@ export default function MissionSection() {
       </div>
 
       {/* 4. Why Choose Neptrax? */}
-      <div className="py-32 relative bg-[#111827]">
+      <div className="py-32 relative bg-[#111827] border-t border-white/5">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#2563eb]/5 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <ScrollReveal1 direction="up">
@@ -295,89 +295,91 @@ export default function MissionSection() {
       </div>
 
       {/* 5. Enhanced Outcomes Section */}
-      <div className="py-32 bg-white/5 rounded-[1rem] mx-6 mb-16 overflow-hidden relative border border-white/5">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#2563eb]/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
-            {/* Left Content */}
-            <ScrollReveal1 direction="right">
-              <div className="space-y-12 pl-8">
-                <div className="space-y-6">
-                  <h2 className="text-6xl lg:text-8xl font-black leading-[0.9] tracking-tighter text-[#f1f5f9]">
-                    Enhanced <br /><span className="text-gradient">Outcomes</span>
-                  </h2>
-                  <div className="flex gap-6 items-center">
-                    <p className="text-[#2563eb] font-black uppercase tracking-[0.5em] text-sm md:text-base">
-                      Fast • Functional • Effective
-                    </p>
+      <div className="py-32 bg-[#0d1117] relative border-t border-white/5">
+        <div className="bg-white/5 rounded-[1rem] mx-6 mb-16 overflow-hidden relative border border-white/5 py-32">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#2563eb]/10 rounded-full blur-[120px] pointer-events-none"></div>
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              
+              {/* Left Content */}
+              <ScrollReveal1 direction="right">
+                <div className="space-y-12 pl-8">
+                  <div className="space-y-6">
+                    <h2 className="text-6xl lg:text-8xl font-black leading-[0.9] tracking-tighter text-[#f1f5f9]">
+                      Enhanced <br /><span className="text-gradient">Outcomes</span>
+                    </h2>
+                    <div className="flex gap-6 items-center">
+                      <p className="text-[#2563eb] font-black uppercase tracking-[0.5em] text-sm md:text-base">
+                        Fast • Functional • Effective
+                      </p>
+                    </div>
+                  </div>
+
+                  <p className="text-[#abbcd4] text-xl md:text-2xl leading-relaxed font-medium max-w-xl">
+                    Delivering functional, high-end digital solutions through precise engineering and creative strategy.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pt-6">
+                    <div className="space-y-2">
+                      <p className="text-5xl font-black text-white"><Counter from={0} to={100} suffix="+" /></p>
+                      <p className="text-xs text-[#94a3b8] uppercase font-black tracking-[0.2em]">Sites Built</p>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-5xl font-black text-white">24/7</p>
+                      <p className="text-xs text-[#94a3b8] uppercase font-black tracking-[0.2em]">Support</p>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-5xl font-black text-white"><Counter from={0} to={50} suffix="+" /></p>
+                      <p className="text-xs text-[#94a3b8] uppercase font-black tracking-[0.2em]">Verified Reviews</p>
+                    </div>
                   </div>
                 </div>
+              </ScrollReveal1>
 
-                <p className="text-[#abbcd4] text-xl md:text-2xl leading-relaxed font-medium max-w-xl">
-                  Delivering functional, high-end digital solutions through precise engineering and creative strategy.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pt-6">
-                  <div className="space-y-2">
-                    <p className="text-5xl font-black text-white"><Counter from={0} to={100} suffix="+" /></p>
-                    <p className="text-xs text-[#94a3b8] uppercase font-black tracking-[0.2em]">Sites Built</p>
+              {/* Right Side: Galactic Orbit Animation */}
+              <div className="relative flex items-center justify-center min-h-[500px]">
+                <div className="galactic-container">
+                  <div className="galactic-anchor">
+                    <img src="https://cdn.simpleicons.org/google/4285F4" alt="Company Logo" />
                   </div>
-                  <div className="space-y-2">
-                    <p className="text-5xl font-black text-white">24/7</p>
-                    <p className="text-xs text-[#94a3b8] uppercase font-black tracking-[0.2em]">Support</p>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-5xl font-black text-white"><Counter from={0} to={50} suffix="+" /></p>
-                    <p className="text-xs text-[#94a3b8] uppercase font-black tracking-[0.2em]">Verified Reviews</p>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal1>
 
-            {/* Right Side: Galactic Orbit Animation */}
-            <div className="relative flex items-center justify-center min-h-[500px]">
-              <div className="galactic-container">
-                <div className="galactic-anchor">
-                  <img src="https://cdn.simpleicons.org/google/4285F4" alt="Company Logo" />
-                </div>
-
-                <div className="orbit-ring ring-inner">
-                  {techInner.map((tech, i) => {
-                    const angle = i * (360 / techInner.length);
-                    return (
-                      <div 
-                        key={tech.name} 
-                        className="orbit-node"
-                        style={{ transform: `rotate(${angle}deg) translateY(${innerRadius})` } as any}
-                      >
-                        <div style={{ transform: `rotate(${-angle}deg)` }}>
-                          <div className="orbit-icon">
-                            <img src={tech.logo} alt={tech.name} />
+                  <div className="orbit-ring ring-inner">
+                    {techInner.map((tech, i) => {
+                      const angle = i * (360 / techInner.length);
+                      return (
+                        <div 
+                          key={tech.name} 
+                          className="orbit-node"
+                          style={{ transform: `rotate(${angle}deg) translateY(${innerRadius})` } as any}
+                        >
+                          <div style={{ transform: `rotate(${-angle}deg)` }}>
+                            <div className="orbit-icon">
+                              <img src={tech.logo} alt={tech.name} />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    );
-                  })}
-                </div>
+                      );
+                    })}
+                  </div>
 
-                <div className="orbit-ring ring-outer">
-                  {techOuter.map((tech, i) => {
-                    const angle = i * (360 / techOuter.length);
-                    return (
-                      <div 
-                        key={tech.name} 
-                        className="orbit-node"
-                        style={{ transform: `rotate(${angle}deg) translateY(${outerRadius})` } as any}
-                      >
-                        <div style={{ transform: `rotate(${-angle}deg)` }}>
-                          <div className="orbit-icon">
-                            <img src={tech.logo} alt={tech.name} />
+                  <div className="orbit-ring ring-outer">
+                    {techOuter.map((tech, i) => {
+                      const angle = i * (360 / techOuter.length);
+                      return (
+                        <div 
+                          key={tech.name} 
+                          className="orbit-node"
+                          style={{ transform: `rotate(${angle}deg) translateY(${outerRadius})` } as any}
+                        >
+                          <div style={{ transform: `rotate(${-angle}deg)` }}>
+                            <div className="orbit-icon">
+                              <img src={tech.logo} alt={tech.name} />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -386,7 +388,7 @@ export default function MissionSection() {
       </div>
 
       {/* 6. About Neptrax Section */}
-      <div className="py-16 max-w-full mx-auto px-12 mb-16">
+      <div className="py-24 max-w-full mx-auto px-12 mb-16 bg-[#0d1117] border-t border-white/5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Horizontal Image */}
           <ScrollReveal1 direction="right">
@@ -397,7 +399,7 @@ export default function MissionSection() {
                 alt="About Neptrax Office" 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#28282B] via-transparent to-transparent opacity-40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117] via-transparent to-transparent opacity-40" />
             </div>
           </ScrollReveal1>
 
