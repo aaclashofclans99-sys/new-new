@@ -226,7 +226,7 @@ export default function MissionSection() {
       </div>
 
       {/* 3. Our Premium Expertise Section */}
-      <div className="bg-[#0d1117] py-16">
+      <div className="bg-[#0d1117] py-24">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal1 direction="up">
             <div className="text-center mb-24">
