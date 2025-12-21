@@ -527,6 +527,7 @@ export default function MissionSection() {
                   <motion.button 
                     whileHover={{ scale: 1.05, x: 5 }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => window.location.href = "/about"}
                     className="px-10 py-5 rounded-full bg-gradient-to-r from-[#2563eb] to-[#1e3a8a] text-white font-black text-xl transition-all shadow-xl shadow-blue-600/30 flex items-center gap-3 group"
                   >
                     Learn More
