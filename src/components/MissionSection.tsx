@@ -240,7 +240,7 @@ export default function MissionSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, idx) => (
               <ScrollReveal1 key={idx} direction="up" delay={idx * 100}>
-                <div className="group h-full flex flex-col glass-card rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-500 border border-white/5 hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.3)]">
+                <div className="group h-full flex flex-col glass-card -3xl overflow-hidden hover:-translate-y-2 transition-all duration-500 border border-white/5 hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.3)]">
                   <div className="h-48 overflow-hidden relative">
                     <img src={feature.image} alt={feature.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
