@@ -297,7 +297,7 @@ export default function MissionSection() {
       </div>
 
 {/* 5. Enhanced Outcomes Section (Galactic Multi-Ring Orbit) */}
-<div className="py-32 bg-white/5 -[4rem] mx-6 mb-16 overflow-hidden relative">
+<div className="py-32 bg-white/5 rounded-[2rem] mx-6 mb-16 overflow-hidden relative">
   <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
   <div className="max-w-7xl mx-auto px-6">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"> {/* Changed gap-24 to gap-16 */}
