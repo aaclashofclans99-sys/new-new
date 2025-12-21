@@ -261,7 +261,7 @@ export default function MissionSection() {
       </div>
 
       {/* 4. Why Choose Neptrax? */}
-      <div className="py-32 relative bg-[#0d1117]">
+      <div className="py-4 relative bg-[#0d1117]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#2563eb]/5 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <ScrollReveal1 direction="up">
