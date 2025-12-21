@@ -404,7 +404,7 @@ export default function MissionSection() {
 
         {/* 5. Enhanced Outcomes Section */}
         <div className="py-24 bg-[#0d1117] relative">
-          <div className="bg-white/5 rounded-[1rem] mx-6 mb-16 overflow-hidden relative border border-white/5 py-24">
+          <div className="bg-white/5 rounded-[1rem] mx-6 mb-16 overflow-hidden relative border border-white/5 py-4">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#2563eb]/10 rounded-full blur-[120px] pointer-events-none"></div>
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
