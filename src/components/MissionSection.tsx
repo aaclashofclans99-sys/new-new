@@ -67,7 +67,7 @@ const EnhancedButton: React.FC<EnhancedButtonProps> = ({
   const baseStyles = "relative inline-flex items-center justify-center gap-2 font-black transition-all overflow-hidden rounded-full group select-none";
   
   const variants = {
-    primary: "bg-blue-600 hover:bg-blue-500 text-white shadow-2xl shadow-blue-600/30",
+    primary: "bg-gradient-to-r from-[#2563eb] to-[#1e3a8a] hover:opacity-90 text-white shadow-2xl shadow-blue-600/30",
     secondary: "bg-white/5 hover:bg-white/10 border border-white/10 text-white backdrop-blur-sm"
   };
   
