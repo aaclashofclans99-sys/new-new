@@ -339,7 +339,7 @@ export default function MissionSection() {
               <div className="relative flex items-center justify-center min-h-[500px]">
                 <div className="galactic-container">
                   <div className="galactic-anchor">
-                    <img src="https://cdn.simpleicons.org/google/4285F4" alt="Company Logo" />
+                    <img src="/logo.png" alt="Company Logo" />
                   </div>
 
                   <div className="orbit-ring ring-inner">
