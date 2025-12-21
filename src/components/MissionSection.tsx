@@ -245,7 +245,7 @@ export default function MissionSection() {
                   <img
                     src="/home.png"
                     alt="Modern Office"
-                    className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-200 object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117]/60 to-transparent"></div>
                 </div>
