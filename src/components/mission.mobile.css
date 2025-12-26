@@ -1,0 +1,258 @@
+/* 
+   MISSION SECTION MOBILE RESPONSIVENESS
+   This file manages the visual layout of the Mission section on small screens.
+   It targets only elements within the MissionSection component.
+*/
+
+@media (max-width: 768px) {
+  /* Main Container Adjustments */
+  .mission-section-root {
+    overflow-x: hidden;
+  }
+
+  .mission-hero-grid {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  /* Typography Scaling */
+  .mission-hero-content h2 {
+    font-size: 2.25rem !important;
+    line-height: 1.1 !important;
+    text-align: center;
+  }
+
+  /* Testimonial Tweaks */
+  .mission-testimonial {
+    padding: 1.5rem !important;
+  }
+  .mission-testimonial p {
+    font-size: 1.125rem !important;
+    text-align: center;
+  }
+  .mission-testimonial .flex {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Stats Grid */
+  .mission-stats-grid {
+    grid-template-cols: 1fr !important;
+    gap: 1rem !important;
+  }
+  .mission-stats-grid .text-4xl {
+    font-size: 2.5rem !important;
+  }
+
+  /* Flow Grid - Single Column */
+  .mission-flow-grid,
+  .mission-benefits-grid,
+  .clients-grid {
+    grid-template-cols: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* 
+     OUR EXPERTISE SLIDER (MOBILE ONLY)
+     Removes Card UI and sets up slider track
+  */
+  .mission-expertise-section {
+    position: relative;
+    padding-bottom: 6rem !important;
+    overflow: hidden;
+  }
+
+  .mission-expertise-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    grid-template-cols: none !important;
+    gap: 0 !important;
+    width: 100%;
+    will-change: transform;
+  }
+
+  .mission-expertise-grid > div {
+    flex: 0 0 100% !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .mission-expertise-grid > div .p-8 {
+    padding: 2rem 1.5rem !important;
+    text-align: center;
+    align-items: center;
+  }
+
+  .mission-expertise-grid > div .flex.items-center.gap-3 {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mission-expertise-grid > div .h-48 {
+    height: 250px !important;
+    border-radius: 1.5rem;
+    margin: 0 1.5rem;
+  }
+
+  .mission-expertise-grid h3 {
+    font-size: 1.75rem !important;
+  }
+
+  .mission-expertise-grid p {
+    font-size: 1rem !important;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Slider Pagination Dots */
+  .expertise-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    position: absolute;
+    bottom: 3rem;
+    width: 100%;
+    z-index: 20;
+  }
+
+  .expertise-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+  }
+
+  .expertise-dot.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    transform: scale(1.2);
+  }
+
+  /* Section Header Spacing */
+  .mission-flow-section,
+  .mission-why-section,
+  .mission-outcomes-section,
+  .mission-about-section,
+  .mission-clients-section,
+  .mission-cta-section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  .mission-flow-section h2,
+  .mission-why-section h2,
+  .clients-header h2 {
+    font-size: 2rem !important;
+  }
+
+  /* Outcomes Section Tweaks */
+  .mission-outcomes-container {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    padding: 3rem 1rem !important;
+  }
+
+  .outcomes-content h2 {
+    font-size: 3rem !important;
+    margin-bottom: 1rem;
+  }
+
+  .outcomes-stats {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+    padding-top: 2rem !important;
+    width: 100% !important;
+  }
+
+  .outcomes-stats > div {
+    text-align: center !important;
+    flex: 1 !important;
+    min-width: 0;
+  }
+
+  .outcomes-stats p:first-child {
+    font-size: 1.75rem !important;
+    line-height: 1 !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .outcomes-stats p:last-child {
+    font-size: 0.55rem !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.05em !important;
+    opacity: 0.8;
+  }
+
+  /* Galactic Orbit - Scaled down for mobile */
+  .mission-orbit-wrapper {
+    min-height: 350px !important;
+    margin-top: 2rem;
+  }
+  
+  .galactic-container {
+    height: 350px !important;
+    transform: scale(0.85);
+  }
+
+  /* About Section Styling */
+  .about-grid {
+    gap: 2rem !important;
+  }
+
+  .about-image-wrapper {
+    aspect-ratio: 16/10 !important;
+    height: auto !important;
+    border-radius: 1.5rem !important;
+  }
+
+  .about-content {
+    text-align: center;
+    space-y: 1.5rem !important;
+  }
+
+  .about-content h3 {
+    font-size: 2.5rem !important;
+  }
+
+  .about-content p {
+    font-size: 1rem !important;
+  }
+
+  .about-cta {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-cta button {
+    width: 100%;
+    font-size: 1.25rem !important;
+  }
+
+  /* Clients Section Layout */
+  .clients-header p {
+    font-size: 1rem !important;
+  }
+
+  /* CTA Section Styling */
+  .cta-container h2 {
+    font-size: 2.25rem !important;
+  }
+  
+  .cta-container p {
+    font-size: 1rem !important;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+}
