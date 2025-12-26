@@ -58,6 +58,7 @@
      - LANDSCAPE IMAGES
      - NO ICONS
      - COMPACT EDITORIAL LAYOUT
+     - SEAMLESS LOOPING SUPPORT
   */
   .mission-expertise-section {
     position: relative;
@@ -77,10 +78,16 @@
     gap: 0 !important;
     width: 100%;
     will-change: transform;
+    /* Ensure reveal animations don't hide items in the slider */
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   .mission-expertise-grid > div {
     flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
@@ -88,6 +95,16 @@
     transform: none !important;
     transition: none !important;
     border-radius: 0 !important;
+    /* Force visibility for seamless looping */
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Override ScrollReveal behavior within the slider on mobile */
+  .mission-expertise-grid > div > div {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
   }
 
   /* Hide card specific wrappers/borders */
