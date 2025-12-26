@@ -82,10 +82,10 @@ export function initExpertiseSlider() {
     }
   });
 
-  // Auto-slide logic
+  // Auto-slide logic - Updated to 7000ms
   function startAutoSlide() {
     stopAutoSlide();
-    autoSlideInterval = setInterval(nextSlide, 4500);
+    autoSlideInterval = setInterval(nextSlide, 7000);
   }
 
   function stopAutoSlide() {
