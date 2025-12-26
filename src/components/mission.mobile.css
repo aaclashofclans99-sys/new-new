@@ -58,7 +58,6 @@
      - LANDSCAPE IMAGES
      - NO ICONS
      - COMPACT EDITORIAL LAYOUT
-     - SEAMLESS LOOPING SUPPORT
   */
   .mission-expertise-section {
     position: relative;
@@ -78,16 +77,10 @@
     gap: 0 !important;
     width: 100%;
     will-change: transform;
-    /* Ensure reveal animations don't hide items in the slider */
-    opacity: 1 !important;
-    transform: none !important;
   }
 
   .mission-expertise-grid > div {
     flex: 0 0 100% !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
@@ -95,17 +88,6 @@
     transform: none !important;
     transition: none !important;
     border-radius: 0 !important;
-    /* Force visibility for seamless looping */
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  /* Ensure clones and original items are always visible on mobile within the slider */
-  .mission-expertise-grid > div,
-  .mission-expertise-grid .expertise-clone {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
   }
 
   /* Hide card specific wrappers/borders */
@@ -160,9 +142,9 @@
     opacity: 0.8;
   }
 
-  /* Hide "Learn More" links on mobile Expertise to keep it compact */
+  /* Hide "Learn More" links on mobile Expertise to keep it compact if needed */
   .mission-expertise-grid .group\/link {
-    display: none !important;
+    font-size: 0.875rem !important;
   }
 
   /* Slider Pagination Dots */
