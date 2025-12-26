@@ -54,12 +54,20 @@
 
   /* 
      OUR EXPERTISE SLIDER (MOBILE ONLY)
-     Removes Card UI and sets up slider track
+     - NO CARD UI (Backgrounds, borders, shadows removed)
+     - LANDSCAPE IMAGES
+     - NO ICONS
+     - COMPACT EDITORIAL LAYOUT
   */
   .mission-expertise-section {
     position: relative;
-    padding-bottom: 6rem !important;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
     overflow: hidden;
+  }
+
+  .mission-expertise-section .mb-24 {
+    margin-bottom: 2rem !important;
   }
 
   .mission-expertise-grid {
@@ -79,60 +87,90 @@
     padding: 0 !important;
     transform: none !important;
     transition: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Hide card specific wrappers/borders */
+  .mission-expertise-grid > div .group.h-full {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
   }
 
   .mission-expertise-grid > div .p-8 {
-    padding: 2rem 1.5rem !important;
+    padding: 1.5rem 1rem 0 1rem !important;
     text-align: center;
     align-items: center;
   }
 
-  .mission-expertise-grid > div .flex.items-center.gap-3 {
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+  /* Hide Icons on Mobile */
+  .mission-expertise-grid > div .w-10.h-10 {
+    display: none !important;
   }
 
+  .mission-expertise-grid > div .flex.items-center.gap-3 {
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Landscape Image Ratio Correction */
   .mission-expertise-grid > div .h-48 {
-    height: 250px !important;
-    border-radius: 1.5rem;
-    margin: 0 1.5rem;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+  }
+
+  .mission-expertise-grid > div .h-48 img {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .mission-expertise-grid h3 {
-    font-size: 1.75rem !important;
+    font-size: 1.5rem !important;
+    margin-top: 0.5rem;
   }
 
   .mission-expertise-grid p {
-    font-size: 1rem !important;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    max-width: 100%;
+    margin-bottom: 1.5rem !important;
+    opacity: 0.8;
+  }
+
+  /* Hide "Learn More" links on mobile Expertise to keep it compact if needed */
+  .mission-expertise-grid .group\/link {
+    font-size: 0.875rem !important;
   }
 
   /* Slider Pagination Dots */
   .expertise-dots {
     display: flex;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
     position: absolute;
-    bottom: 3rem;
+    bottom: 2rem;
     width: 100%;
     z-index: 20;
   }
 
   .expertise-dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
     transition: all 0.3s ease;
   }
 
   .expertise-dot.active {
     background: #2563eb;
     border-color: #2563eb;
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 
   /* Section Header Spacing */
@@ -193,7 +231,7 @@
     opacity: 0.8;
   }
 
-  /* Galactic Orbit - Scaled down for mobile */
+  /* Galactic Orbit */
   .mission-orbit-wrapper {
     min-height: 350px !important;
     margin-top: 2rem;
