@@ -15,6 +15,11 @@
     display: none !important;
   }
 
+  /* Hide Streamline Digital Flow Section on Mobile */
+  .mission-flow-section {
+    display: none !important;
+  }
+
   .mission-hero-grid {
     padding-top: 1rem !important;
     padding-bottom: 4rem !important;
@@ -49,7 +54,7 @@
     font-size: 2.5rem !important;
   }
 
-  /* Flow Grid - Single Column */
+  /* Flow Grid - Single Column (though section is hidden, keep for safety or tablet edge cases <768) */
   .mission-flow-grid,
   .mission-benefits-grid,
   .clients-grid {
@@ -63,10 +68,11 @@
      - LANDSCAPE IMAGES
      - NO ICONS
      - COMPACT EDITORIAL LAYOUT
+     - Adjusted top padding since Flow section is hidden
   */
   .mission-expertise-section {
     position: relative;
-    padding-top: 4rem !important;
+    padding-top: 0 !important; /* Reduced from 4rem to 0 to manage space after Hero */
     padding-bottom: 4rem !important;
     overflow: hidden;
   }
@@ -179,7 +185,7 @@
   }
 
   /* Section Header Spacing */
-  .mission-flow-section,
+  /* Note: mission-flow-section is hidden, removed from this list effectively */
   .mission-why-section,
   .mission-outcomes-section,
   .mission-about-section,
