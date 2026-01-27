@@ -149,7 +149,7 @@ export default function MissionSection() {
     {
       icon: User,
       title: 'Personal Portfolio',
-      description: 'Your work is your story. Don’t just list it—Present it. We create stunning portfolios that capture your unique style and build a personal brand that makes you impossible to forget.',
+      description: 'Your work is your story. Don’t just list it Present it. We create stunning portfolios that capture your unique style and build a personal brand that makes you impossible to forget.',
       image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=600',
     },
     {
