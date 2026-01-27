@@ -56,7 +56,7 @@
     font-size: 2.5rem !important;
   }
 
-  /* Flow Grid */
+  /* Flow Grid - Single Column (though section is hidden, keep for safety or tablet edge cases <768) */
   .mission-flow-grid,
   .mission-benefits-grid,
   .clients-grid {
@@ -93,33 +93,61 @@
     transition: none !important;
   }
 
-  /* Wrapper for slide padding */
   .mission-expertise-grid > div {
     flex: 0 0 100% !important;
-    padding: 0 1.25rem !important; /* Add breathing room from screen edges */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    transform: none !important;
+    transition: none !important;
+    border-radius: 0 !important;
     will-change: transform;
   }
 
-  /* Card Container - Round Corners & Shape */
+  /* Hide card specific wrappers/borders */
   .mission-expertise-grid > div .group.h-full {
     background: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 10px 30px -5px rgba(0,0,0,0.5) !important;
-    border-radius: 1.25rem !important; /* Rounded corners */
-    overflow: hidden !important;
-    display: flex !important;
-    flex-direction: column !important;
-    height: auto !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
   }
 
-  /* Image Area */
+  .mission-expertise-grid > div .p-8 {
+    padding: 1.5rem 1rem 0 1rem !important;
+    text-align: center;
+    align-items: center;
+  }
+
+  /* Hide Icons on Mobile */
+  .mission-expertise-grid > div .w-10.h-10 {
+    display: none !important;
+  }
+
+  .mission-expertise-grid > div .flex.items-center.gap-3 {
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Landscape Image Ratio Correction */
   .mission-expertise-grid > div .h-48 {
-    height: 200px !important;
-    width: 100% !important;
-    margin: 0 !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
     border-radius: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
     position: relative;
-    flex-shrink: 0;
+  }
+
+  .mission-expertise-grid > div .h-48::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(13, 17, 23, 0.9), transparent);
+    pointer-events: none;
   }
 
   .mission-expertise-grid > div .h-48 img {
@@ -129,98 +157,72 @@
     transition: transform 0.7s ease;
   }
 
-  /* Content Area - Light Glossy BG & Left Align */
-  .mission-expertise-grid > div .p-8 {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 1.5rem !important; /* Normal spacing */
-    text-align: left !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    flex-grow: 1;
+  .mission-expertise-grid > div:hover .h-48 img {
+    transform: scale(1.05);
   }
 
-  /* Hide Icon on Mobile to save space for single line heading */
-  .mission-expertise-grid > div .w-10.h-10 {
-    display: none !important;
-  }
-
-  /* Header Wrapper */
-  .mission-expertise-grid > div .flex.items-center.gap-3 {
-    justify-content: flex-start !important;
-    width: 100% !important;
-    margin-bottom: 0.5rem !important;
-  }
-
-  /* Heading - Single Line & Ellipsis */
   .mission-expertise-grid h3 {
-    font-size: 1.35rem !important;
-    font-weight: 700 !important;
-    color: #f1f5f9 !important;
-    white-space: nowrap !important; /* Force single line */
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    width: 100%;
-    margin: 0 !important;
-    text-align: left !important;
-    display: block !important;
+    font-size: 1.5rem !important;
+    margin-top: 0.5rem;
+    padding: 0 1rem;
   }
 
-  /* Description - Left Align */
   .mission-expertise-grid p {
     font-size: 0.95rem !important;
-    line-height: 1.6 !important;
-    text-align: left !important;
-    color: #94a3b8 !important;
+    line-height: 1.5 !important;
+    max-width: 100%;
     margin-bottom: 1.5rem !important;
-    padding: 0 !important;
-    opacity: 0.9 !important;
+    opacity: 0.8;
+    padding: 0 1rem;
   }
 
-  /* Link - Left Align */
+  /* Hide "Learn More" links on mobile Expertise to keep it compact if needed */
   .mission-expertise-grid .group\/link {
-    font-size: 0.95rem !important;
-    justify-content: flex-start !important;
-    margin-top: auto !important;
+    font-size: 0.875rem !important;
   }
 
-  /* Simple Tiny Dots */
+  /* Improved Pagination Dots */
   .expertise-dots {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 8px;
+    gap: 0.75rem;
     margin-top: 2rem;
-    padding-bottom: 0;
+    padding-bottom: 1rem;
     width: 100%;
     position: absolute;
-    bottom: 2rem;
+    bottom: 0;
     left: 0;
   }
 
   .expertise-dot {
-    width: 6px !important;
-    height: 6px !important;
-    border-radius: 50% !important;
-    background: rgba(255, 255, 255, 0.2) !important;
-    border: none !important;
-    padding: 0;
+    width: 32px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
   }
 
-  /* Remove complex progress bar effect */
   .expertise-dot::after {
-    display: none !important;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #2563eb;
+    transition: left 0.3s ease;
   }
 
   .expertise-dot.active {
-    background: #2563eb !important;
-    transform: scale(1.4);
-    box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
+    background: rgba(37, 99, 235, 0.3);
+  }
+
+  .expertise-dot.active::after {
+    left: 0;
   }
 
   /* Section Spacing */
@@ -247,7 +249,7 @@
     text-align: center !important;
   }
 
-  /* Outcomes Section Centering */
+  /* Outcomes Section Centering & Single Line Tagline */
   .mission-outcomes-container {
     margin-left: 1rem !important;
     margin-right: 1rem !important;
@@ -287,6 +289,8 @@
   .outcomes-content p.text-\[#abbcd4\] {
     text-align: center !important;
     max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .outcomes-stats {
