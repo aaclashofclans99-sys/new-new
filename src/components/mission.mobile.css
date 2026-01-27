@@ -94,24 +94,23 @@
     transition: none !important;
   }
 
-  /* Slide Wrapper - Spacing from screen edges */
+  /* Slide Wrapper - Padding to prevent full bleed */
   .mission-expertise-grid > div {
     flex: 0 0 100% !important;
-    padding: 0 1.25rem !important;
+    padding: 0 1.25rem !important; 
     will-change: transform;
   }
 
   /* Main Card Styling */
   .mission-expertise-grid > div .group.h-full {
     background: transparent !important;
-    border: none !important; /* Managed by children or specific borders */
-    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5) !important;
-    border-radius: 1.25rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 1.5rem !important; /* Rounded corners */
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5) !important;
     overflow: hidden !important;
     display: flex !important;
     flex-direction: column !important;
     height: auto !important;
-    border: 1px solid rgba(255,255,255,0.1) !important; /* Outer border */
   }
 
   /* Image Area */
@@ -119,19 +118,21 @@
     height: 200px !important;
     width: 100% !important;
     margin: 0 !important;
-    border-radius: 0 !important; /* Parent handles rounding */
+    border-radius: 0 !important;
     flex-shrink: 0;
+    position: relative;
   }
 
   .mission-expertise-grid > div .h-48 img {
     object-fit: cover !important;
     width: 100% !important;
     height: 100% !important;
+    transition: transform 0.7s ease;
   }
 
-  /* Content Area - Light Glossy Background */
+  /* Content Area - Glossy Background */
   .mission-expertise-grid > div .p-8 {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%) !important;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 1.5rem !important; /* Normal spacing */
@@ -143,47 +144,52 @@
     flex-grow: 1;
   }
 
-  /* Hide Icon to allow full width for heading */
+  /* Hide Icon for cleaner single-line heading */
   .mission-expertise-grid > div .w-10.h-10 {
     display: none !important;
   }
 
   /* Header Container */
   .mission-expertise-grid > div .flex.items-center.gap-3 {
+    justify-content: flex-start !important;
     width: 100% !important;
-    display: block !important;
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
   }
 
-  /* Heading - One Line & Ellipsis */
+  /* Heading - Single Line & Ellipsis */
   .mission-expertise-grid h3 {
-    font-size: 1.25rem !important;
+    font-size: 1.35rem !important;
     font-weight: 700 !important;
     color: #f1f5f9 !important;
-    white-space: nowrap !important;
+    white-space: nowrap !important; /* One line */
     overflow: hidden !important;
     text-overflow: ellipsis !important;
-    display: block !important;
     width: 100%;
     margin: 0 !important;
-    line-height: 1.2 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    display: block !important;
   }
 
-  /* Description Text - Left Align & Normal Spacing */
+  /* Description Text */
   .mission-expertise-grid p {
     font-size: 0.95rem !important;
     line-height: 1.6 !important;
-    color: #94a3b8 !important;
-    margin-bottom: 1.5rem !important;
     text-align: left !important;
-    opacity: 1 !important;
+    color: #cbd5e1 !important;
+    margin-bottom: 1.25rem !important;
+    padding: 0 !important;
+    opacity: 0.9 !important;
+    display: block !important;
   }
 
-  /* Link - Left Align */
+  /* Link */
   .mission-expertise-grid .group\/link {
-    margin-top: auto !important;
+    font-size: 0.95rem !important;
     justify-content: flex-start !important;
-    padding-bottom: 0.25rem;
+    color: #3b82f6 !important;
+    margin-top: auto !important;
+    font-weight: 700 !important;
   }
 
   /* Simple Tiny Dots Pagination */
@@ -209,18 +215,18 @@
     transition: all 0.3s ease;
   }
 
-  /* Remove complex after elements from previous design */
+  /* Remove complex progress bar effect */
   .expertise-dot::after {
     display: none !important;
   }
 
   .expertise-dot.active {
     background: #2563eb !important;
-    transform: scale(1.2);
+    transform: scale(1.4);
     box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
   }
 
-  /* General Section Spacing */
+  /* Section Spacing */
   .mission-why-section,
   .mission-outcomes-section,
   .mission-about-section,
@@ -236,7 +242,7 @@
     font-size: 2rem !important;
   }
 
-  /* Why Choose Neptrax - Mobile Alignment */
+  /* Why Choose Neptrax Section */
   .mission-why-section p.text-\[#2563eb\] {
     white-space: nowrap !important;
     letter-spacing: 0.1em !important;
@@ -244,7 +250,7 @@
     text-align: center !important;
   }
 
-  /* Outcomes Section */
+  /* Outcomes Section Centering & Single Line Tagline */
   .mission-outcomes-container {
     margin-left: 1rem !important;
     margin-right: 1rem !important;
@@ -275,13 +281,17 @@
 
   .outcomes-content p.text-\[#2563eb\] {
     white-space: nowrap !important;
+    letter-spacing: 0.15em !important;
     display: block !important;
     text-align: center !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .outcomes-content p.text-\[#abbcd4\] {
     text-align: center !important;
     max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .outcomes-stats {
@@ -297,22 +307,29 @@
   .outcomes-stats > div {
     text-align: center !important;
     flex: 1 !important;
+    min-width: 0;
   }
 
   .outcomes-stats p:first-child {
     font-size: 1.75rem !important;
     line-height: 1 !important;
+    margin-bottom: 0.35rem !important;
   }
 
   .outcomes-stats p:last-child {
     font-size: 0.55rem !important;
+    white-space: nowrap !important;
     letter-spacing: 0.05em !important;
+    opacity: 0.8;
   }
 
-  /* Orbit */
+  /* Galactic Orbit */
   .mission-orbit-wrapper {
     min-height: 350px !important;
     margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   
   .galactic-container {
@@ -320,7 +337,7 @@
     transform: scale(0.85);
   }
 
-  /* About */
+  /* About Section Styling */
   .about-grid {
     gap: 2rem !important;
   }
@@ -344,16 +361,22 @@
     font-size: 1rem !important;
   }
 
-  .about-cta button {
-    width: 100%;
+  .about-cta {
+    display: flex;
+    justify-content: center;
   }
 
-  /* Clients */
+  .about-cta button {
+    width: 100%;
+    font-size: 1.25rem !important;
+  }
+
+  /* Clients Section Layout */
   .clients-header p {
     font-size: 1rem !important;
   }
 
-  /* CTA */
+  /* CTA Section Styling */
   .cta-container h2 {
     font-size: 2.25rem !important;
   }
