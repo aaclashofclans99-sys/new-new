@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
+
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { motion, useInView, animate, Variants } from 'framer-motion';
 import {
   Globe,
@@ -24,7 +25,6 @@ import {
 } from 'lucide-react';
 import ScrollReveal1 from './ScrollReveal1';
 import './mission.mobile.css';
-import { initExpertiseSlider } from './expertise.mobile.slider.js';
 
 const Counter = ({ from, to, duration = 2, suffix = "" }: { from: number, to: number, duration?: number, suffix?: string }) => {
   const [count, setCount] = useState(from);
@@ -143,13 +143,13 @@ export default function MissionSection() {
     {
       icon: Briefcase,
       title: 'Business Website',
-      description: 'Every business needs a solid foundation online. We build professional, easy to navigate websites that clearly showcase what you offer, making it simple for customers to understand your value.',
+      description: 'Every business needs a solid foundation online. We build professional, easy-to-navigate websites that clearly showcase what you offer, making it simple for customers to understand your value.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600',
     },
     {
       icon: User,
       title: 'Personal Portfolio',
-      description: 'Your work is your story. Don’t just list it Present it. We create stunning portfolios that capture your unique style and build a personal brand that makes you impossible to forget.',
+      description: 'Your work is your story. Don’t just list it—Present it. We create stunning portfolios that capture your unique style and build a personal brand that makes you impossible to forget.',
       image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=600',
     },
     {
@@ -161,13 +161,13 @@ export default function MissionSection() {
     {
       icon: TrendingUp,
       title: 'SEO Strategy',
-      description: 'Feeling lost in search results? We provide deep dive analysis of your current site and competitors, delivering a clear roadmap to climb rankings and dominate your niche.',
+      description: 'Feeling lost in search results? We provide deep-dive analysis of your current site and competitors, delivering a clear roadmap to climb rankings and dominate your niche.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600',
     },
     {
       icon: Megaphone,
       title: 'Marketing Website',
-      description: 'Stop letting visitors leave empty handed. We design high converting landing pages and sales funnels focused on a single goal: turning viewers into leads and customers.',
+      description: 'Stop letting visitors leave empty-handed. We design high-converting landing pages and sales funnels focused on a single goal: turning viewers into leads and customers.',
       image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&q=80&w=600',
     },
     {
@@ -200,17 +200,17 @@ export default function MissionSection() {
     {
       icon: Cpu,
       title: 'SaaS & Tech',
-      description: 'Scaling digital platforms with robust infrastructure and cutting edge UX/UI design for the next generation of software.'
+      description: 'Scaling digital platforms with robust infrastructure and cutting-edge UX/UI design for the next generation of software.'
     },
     {
       icon: ShoppingBag,
       title: 'E-commerce',
-      description: 'High conversion storefronts that blend aesthetic appeal with seamless checkout experiences to maximize your ROI.'
+      description: 'High-conversion storefronts that blend aesthetic appeal with seamless checkout experiences to maximize your ROI.'
     },
     {
       icon: ShieldCheck,
       title: 'Financial Services',
-      description: 'Secure, modern, and trust driven digital experiences for fintech startups and established banking institutions.'
+      description: 'Secure, modern, and trust-driven digital experiences for fintech startups and established banking institutions.'
     },
     {
       icon: Plane,
@@ -232,12 +232,97 @@ export default function MissionSection() {
   const innerRadius = 'clamp(80px, 10vw, 95px)';
   const outerRadius = 'clamp(165px, 22vw, 190px)';
 
+  // --- Mobile Slider Logic ---
+  const [currentSlide, setCurrentSlide] = useState(1); // Start at 1 because of clone
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const autoSlideTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  // Check mobile
   useEffect(() => {
-    const cleanup = initExpertiseSlider();
-    return () => {
-      if (cleanup) cleanup();
-    };
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  // Prepare slides with clones for infinite loop (Last, ...Originals, First)
+  const sliderFeatures = [
+    { ...features[features.length - 1], id: 'clone-last' },
+    ...features.map((f, i) => ({ ...f, id: `feature-${i}` })),
+    { ...features[0], id: 'clone-first' }
+  ];
+
+  const nextSlide = useCallback(() => {
+    if (!isMobile) return;
+    setIsTransitioning(true);
+    setCurrentSlide(prev => prev + 1);
+  }, [isMobile]);
+
+  const prevSlide = useCallback(() => {
+    if (!isMobile) return;
+    setIsTransitioning(true);
+    setCurrentSlide(prev => prev - 1);
+  }, [isMobile]);
+
+  // Auto-slide
+  useEffect(() => {
+    if (!isMobile) return;
+    const startTimer = () => {
+      if (autoSlideTimerRef.current) clearInterval(autoSlideTimerRef.current);
+      autoSlideTimerRef.current = setInterval(nextSlide, 4000);
+    };
+    startTimer();
+    return () => {
+      if (autoSlideTimerRef.current) clearInterval(autoSlideTimerRef.current);
+    };
+  }, [isMobile, nextSlide, currentSlide]);
+
+  // Handle infinite loop reset
+  const handleTransitionEnd = () => {
+    if (!isMobile) return;
+    
+    // If at the last clone (copy of first), jump to real first
+    if (currentSlide === sliderFeatures.length - 1) {
+      setIsTransitioning(false);
+      setCurrentSlide(1);
+    }
+    // If at the first clone (copy of last), jump to real last
+    if (currentSlide === 0) {
+      setIsTransitioning(false);
+      setCurrentSlide(sliderFeatures.length - 2);
+    }
+  };
+
+  // Touch handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    if (autoSlideTimerRef.current) clearInterval(autoSlideTimerRef.current);
+  };
+  
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+    
+    if (isLeftSwipe) nextSlide();
+    if (isRightSwipe) prevSlide();
+    
+    setTouchStart(0);
+    setTouchEnd(0);
+    
+    // Restart timer
+    if (autoSlideTimerRef.current) clearInterval(autoSlideTimerRef.current);
+    autoSlideTimerRef.current = setInterval(nextSlide, 4000);
+  };
 
   return (
     <div className="mission-section-root">
@@ -263,7 +348,7 @@ export default function MissionSection() {
             <div className="flex flex-col space-y-8 mission-hero-content">
               <ScrollReveal1 direction="left">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-[#f1f5f9]">
-                  Smoother Client Experiences
+                  Providing Smoother Client Experiences
                 </h2>
               </ScrollReveal1>
 
@@ -343,18 +428,33 @@ export default function MissionSection() {
         </div>
 
         {/* 3. Our Premium Expertise Section */}
-        <div className="bg-[#0d1117] py-32 mission-expertise-section">
-          <div className="max-w-7xl mx-auto px-6">
+        <div 
+          className="bg-[#0d1117] py-32 mission-expertise-section" 
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div className="max-w-7xl mx-auto px-6 overflow-hidden">
             <ScrollReveal1 direction="up">
               <div className="text-center mb-24">
                 <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#f1f5f9]">Our <span className="text-[#2563eb]">Expertise</span></h2>
               </div>
             </ScrollReveal1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mission-expertise-grid">
-              {features.map((feature, idx) => (
-                <ScrollReveal1 key={idx} direction="up" delay={idx * 100}>
-                  <div className="group h-full flex flex-col glass-card rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 border border-white/5 hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.3)]">
+            {/* Slider / Grid Container */}
+            <div 
+              ref={sliderRef}
+              className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mission-expertise-grid ${isMobile && isTransitioning ? 'smooth-transition' : 'no-transition'}`}
+              style={isMobile ? { transform: `translateX(-${currentSlide * 100}%)` } : {}}
+              onTransitionEnd={handleTransitionEnd}
+            >
+              {/* If Mobile, render sliderFeatures (with clones). If Desktop, render features (standard). */}
+              {(isMobile ? sliderFeatures : features).map((feature, idx) => {
+                // Determine if this is a ScrollReveal wrapper or standard div
+                // Since ScrollReveal adds spacing/transforms, we should be careful on mobile slider
+                // We'll wrap it in ScrollReveal1 only on desktop to avoid conflict with slider transforms
+                const Content = (
+                   <div className="group h-full flex flex-col glass-card rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 border border-white/5 hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.3)]">
                     <div className="h-48 overflow-hidden relative">
                       <img src={feature.image} alt={feature.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     </div>
@@ -371,9 +471,46 @@ export default function MissionSection() {
                       </a>
                     </div>
                   </div>
-                </ScrollReveal1>
-              ))}
+                );
+
+                return isMobile ? (
+                  <div key={idx} className="w-full flex-shrink-0">
+                    {Content}
+                  </div>
+                ) : (
+                  <ScrollReveal1 key={idx} direction="up" delay={idx * 100}>
+                    {Content}
+                  </ScrollReveal1>
+                );
+              })}
             </div>
+
+            {/* Pagination Dots (Mobile Only) */}
+            {isMobile && (
+              <div className="expertise-dots">
+                {features.map((_, idx) => {
+                  // Calculate active index relative to real features
+                  // currentSlide 1 = feature 0
+                  // currentSlide 0 = feature last
+                  // currentSlide N+1 = feature 0
+                  let activeIdx = currentSlide - 1;
+                  if (activeIdx < 0) activeIdx = features.length - 1;
+                  if (activeIdx >= features.length) activeIdx = 0;
+
+                  return (
+                    <button
+                      key={idx}
+                      className={`expertise-dot ${idx === activeIdx ? 'active' : ''}`}
+                      onClick={() => {
+                        setIsTransitioning(true);
+                        setCurrentSlide(idx + 1);
+                      }}
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
 
@@ -432,7 +569,7 @@ export default function MissionSection() {
                     </div>
 
                     <p className="text-[#abbcd4] text-xl md:text-2xl leading-relaxed font-medium max-w-xl">
-                      Delivering functional, high end digital solutions through precise engineering and creative strategy.
+                      Delivering functional, high-end digital solutions through precise engineering and creative strategy.
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pt-6 outcomes-stats">
@@ -563,7 +700,7 @@ export default function MissionSection() {
 
             <ScrollReveal1 direction="up" delay={150} duration={0.8}>
               <p className="text-[#94a3b8] text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-                We partner with forward thinking businesses of all sizes across global industries to redefine digital possibilities.
+                We partner with forward-thinking businesses of all sizes across global industries to redefine digital possibilities.
               </p>
             </ScrollReveal1>
           </div>
