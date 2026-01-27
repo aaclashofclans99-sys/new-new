@@ -432,7 +432,7 @@ export default function MissionSection() {
                     </div>
 
                     <p className="text-[#abbcd4] text-xl md:text-2xl leading-relaxed font-medium max-w-xl">
-                      Delivering functional, high-end digital solutions through precise engineering and creative strategy.
+                      Delivering functional, high end digital solutions through precise engineering and creative strategy.
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pt-6 outcomes-stats">
