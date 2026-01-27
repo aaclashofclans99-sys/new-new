@@ -563,7 +563,7 @@ export default function MissionSection() {
 
             <ScrollReveal1 direction="up" delay={150} duration={0.8}>
               <p className="text-[#94a3b8] text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-                We partner with forward-thinking businesses of all sizes across global industries to redefine digital possibilities.
+                We partner with forward thinking businesses of all sizes across global industries to redefine digital possibilities.
               </p>
             </ScrollReveal1>
           </div>
