@@ -200,17 +200,17 @@ export default function MissionSection() {
     {
       icon: Cpu,
       title: 'SaaS & Tech',
-      description: 'Scaling digital platforms with robust infrastructure and cutting-edge UX/UI design for the next generation of software.'
+      description: 'Scaling digital platforms with robust infrastructure and cutting edge UX/UI design for the next generation of software.'
     },
     {
       icon: ShoppingBag,
       title: 'E-commerce',
-      description: 'High-conversion storefronts that blend aesthetic appeal with seamless checkout experiences to maximize your ROI.'
+      description: 'High conversion storefronts that blend aesthetic appeal with seamless checkout experiences to maximize your ROI.'
     },
     {
       icon: ShieldCheck,
       title: 'Financial Services',
-      description: 'Secure, modern, and trust-driven digital experiences for fintech startups and established banking institutions.'
+      description: 'Secure, modern, and trust driven digital experiences for fintech startups and established banking institutions.'
     },
     {
       icon: Plane,
