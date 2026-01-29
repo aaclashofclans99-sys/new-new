@@ -441,7 +441,7 @@ export default function MissionSection() {
         <div className="py-24 bg-[#0d1117] mission-flow-section">
           <div className="max-w-7xl mx-auto px-6">
             <ScrollReveal1 direction="up">
-              <div className="text-center mb-24">
+              <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#f1f5f9]">Streamline Your <span className="text-[#2563eb]">Digital Flow</span></h2>
                 <p className="text-[#abbcd4] text-lg max-w-2xl mx-auto">
                   Take full control of your digital presence with tools designed for speed, clarity, and precision.
