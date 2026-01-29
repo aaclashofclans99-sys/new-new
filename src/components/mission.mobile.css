@@ -219,33 +219,43 @@
     margin-top: auto !important;
   }
 
-  /* Pagination Dots */
-  .expertise-dots {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    bottom: 1.5rem;
-    left: 0;
-    width: 100%;
-    z-index: 20;
-  }
+ /* Pagination Dots */
+.expertise-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 
-  .expertise-dot {
-    width: 8px !important;
-    height: 8px !important;
-    border-radius: 50% !important;
-    background-color: rgba(255, 255, 255, 0.2) !important; /* Inactive light gray */
-    border: none !important;
-    padding: 0 !important;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
 
-  .expertise-dot.active {
-    background-color: #2563eb !important; /* Active Brand Color */
-  }
+  width: auto;
+  z-index: 50;
+  pointer-events: auto;
+}
+
+/* Base Dot */
+.expertise-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.35); /* Visible on dark bg */
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  transition: 
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Active Dot */
+.expertise-dot.active {
+  background-color: #2563eb; /* Brand blue */
+  transform: scale(1.35);    /* Clear visual hierarchy */
+}
 
   /* Section Spacing */
   .mission-why-section,
