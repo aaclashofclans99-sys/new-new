@@ -252,11 +252,30 @@
   z-index: 50;
 }
 
-  /* Section Spacing */
-  .mission-why-section,
-  .mission-outcomes-section,
-  .mission-about-section,
-  .mission-clients-section,
+  /* Section Spacing - Refined for tightness */
+  .mission-why-section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  /* Space reduction 2: Enhanced Outcomes to About */
+  .mission-outcomes-section {
+    padding-top: 4rem !important;
+    padding-bottom: 1.5rem !important; /* Reduced from 4rem */
+  }
+
+  /* Space reduction 3: About to Who We Work With */
+  .mission-about-section {
+    padding-top: 1.5rem !important; /* Reduced from 4rem */
+    padding-bottom: 2rem !important; /* Reduced from 4rem */
+    margin-bottom: 0 !important; /* Remove TSX margin */
+  }
+
+  .mission-clients-section {
+    padding-top: 2rem !important; /* Reduced from 4rem */
+    padding-bottom: 4rem !important;
+  }
+  
   .mission-cta-section {
     padding-top: 4rem !important;
     padding-bottom: 4rem !important;
@@ -281,6 +300,7 @@
     margin-left: 1rem !important;
     margin-right: 1rem !important;
     padding: 3rem 1rem !important;
+    margin-bottom: 0 !important; /* Remove excessive margin */
   }
 
   .outcomes-grid {
@@ -305,8 +325,6 @@
     text-align: center !important;
   }
   
-  /* REMOVED .outcomes-content p.text rules to allow TSX control for mobile layout changes */
-
   .outcomes-stats {
     display: flex !important;
     flex-direction: row !important;
@@ -336,10 +354,10 @@
     opacity: 0.8;
   }
 
-  /* Galactic Orbit */
+  /* Galactic Orbit - Space Reduction 1 */
   .mission-orbit-wrapper {
     min-height: 350px !important;
-    margin-top: 2rem;
+    margin-top: 1rem !important; /* Reduced from 2rem */
     width: 100%;
     display: flex;
     justify-content: center;
