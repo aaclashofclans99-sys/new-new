@@ -356,9 +356,13 @@
   }
 
   .about-image-wrapper {
-    aspect-ratio: 16/10 !important;
-    height: auto !important;
-    border-radius: 1.5rem !important;
+    display: none !important;
+  }
+  
+  /* Override padding defined in TSX to allow text to fit better */
+  .mission-about-section {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
   }
 
   .about-content {
@@ -367,11 +371,13 @@
   }
 
   .about-content h3 {
-    font-size: 2.5rem !important;
+    font-size: 2.2rem !important;
+    white-space: nowrap !important;
   }
 
   .about-content p {
     font-size: 1rem !important;
+    text-align: justify !important;
   }
 
   .about-cta {
@@ -382,6 +388,7 @@
   .about-cta button {
     width: 100%;
     font-size: 1.25rem !important;
+    justify-content: center !important;
   }
 
   /* Clients Section Layout */
