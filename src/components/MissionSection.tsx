@@ -179,7 +179,7 @@ export default function MissionSection() {
   ];
 
   const benefits = [
-    { title: 'Local Expertise', description: 'Leverage our deep, country-wide expertise to drive growth across the United States.' },
+    { title: 'Local Expertise', description: 'Leverage our deep, country wide expertise to drive growth across the United States.' },
     { title: 'Proven Results', description: 'We deliver measurable success in digital traffic, qualified leads, and revenue growth.' },
     { title: 'Tailored Strategy', description: 'Get a custom digital strategy designed to solve your unique business challenges.' },
     { title: 'Dedicated Partnership', description: 'Stay informed and in control with transparent communication every step of the way.' },
@@ -200,17 +200,17 @@ export default function MissionSection() {
     {
       icon: Cpu,
       title: 'SaaS & Tech',
-      description: 'Scaling digital platforms with robust infrastructure and cutting-edge UX/UI design for the next generation of software.'
+      description: 'Scaling digital platforms with robust infrastructure and cutting edge UX/UI design for the next generation of software.'
     },
     {
       icon: ShoppingBag,
       title: 'E-commerce',
-      description: 'High-conversion storefronts that blend aesthetic appeal with seamless checkout experiences to maximize your ROI.'
+      description: 'High conversion storefronts that blend aesthetic appeal with seamless checkout experiences to maximize your ROI.'
     },
     {
       icon: ShieldCheck,
       title: 'Financial Services',
-      description: 'Secure, modern, and trust-driven digital experiences for fintech startups and established banking institutions.'
+      description: 'Secure, modern, and trust driven digital experiences for fintech startups and established banking institutions.'
     },
     {
       icon: Plane,
@@ -615,7 +615,7 @@ export default function MissionSection() {
 
                     {/* Description: Hidden on mobile */}
                     <p className="hidden md:block text-[#abbcd4] text-xl md:text-2xl leading-relaxed font-medium max-w-xl">
-                      Delivering functional, high-end digital solutions through precise engineering and creative strategy.
+                      Delivering functional, high end digital solutions through precise engineering and creative strategy.
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pt-2 md:pt-6 outcomes-stats">
@@ -748,7 +748,7 @@ export default function MissionSection() {
 
             <ScrollReveal1 direction="up" delay={150} duration={0.8}>
               <p className="text-[#94a3b8] text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-                We partner with forward-thinking businesses of all sizes across global industries to redefine digital possibilities.
+                We partner with forward thinking businesses of all sizes across global industries to redefine digital possibilities.
               </p>
             </ScrollReveal1>
           </div>
@@ -806,7 +806,7 @@ export default function MissionSection() {
 
           <ScrollReveal1 direction="up" delay={150} duration={0.8}>
             <p className="text-[#94a3b8] text-lg sm:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
-              Let's discuss how we can help your business grow online with world-class digital solutions and precision design.
+              Let's discuss how we can help your business grow online with world class digital solutions and precision design.
             </p>
           </ScrollReveal1>
 
