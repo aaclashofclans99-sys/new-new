@@ -489,7 +489,7 @@ export default function MissionSection() {
               {/* If Mobile, render sliderFeatures (with clones). If Desktop, render features (standard). */}
               {(isMobile ? sliderFeatures : features).map((feature, idx) => {
                 const Content = (
-                   <div className="group h-full flex flex-col glass-card rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 border border-white/5 hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.3)]">
+                   <div className="group h-full flex flex-col glass-card rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 border border-white/5 custom-gradient-bg hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.3)]">
                     <div className="h-48 overflow-hidden relative">
                       <img src={feature.image} alt={feature.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     </div>
