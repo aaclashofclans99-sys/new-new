@@ -256,7 +256,8 @@
   height: 4px !important;
   border-radius: 2px !important; /* Makes it pill-shaped */
   transform: none; /* Remove scale transform */
-
+}
+  
   /* Section Spacing */
   .mission-why-section,
   .mission-outcomes-section,
