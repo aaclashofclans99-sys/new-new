@@ -109,10 +109,8 @@
 
   /* Glossy Background applied to Content Area Only */
   .mission-expertise-grid > div .p-8 {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1.5rem !important;
     text-align: left !important;
     display: flex !important;
@@ -150,6 +148,7 @@
     left: 0;
     right: 0;
     height: 40%;
+    background: linear-gradient(to top, rgba(13, 17, 23, 0.9), transparent);
     pointer-events: none;
   }
 
