@@ -219,40 +219,49 @@ background: linear-gradient(
     margin-top: auto !important;
   }
 
-  /* Tiny Dots Pagination */
-  .expertise-dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    margin-top: 2rem;
-    padding-bottom: 1rem;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
+/* Minimal Dot Navigation - Like Most Websites */
+.expertise-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 
-  .expertise-dot {
-    width: 6px !important;
-    height: 6px !important;
-    border-radius: 50% !important;
-    background: rgba(255, 255, 255, 0.3) !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
+.expertise-dot {
+  width: 4px !important;
+  height: 4px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.25) !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
 
-  .expertise-dot::after {
-    display: none !important;
-  }
+.expertise-dot:hover {
+  background: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1;
+}
 
-  .expertise-dot.active {
-    background: #2563eb !important;
-    transform: scale(1.3);
-  }
+.expertise-dot.active {
+  background: #ffffff !important;
+  width: 8px !important;
+  height: 8px !important;
+  opacity: 1;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
+}
+
+.expertise-dot::after {
+  display: none !important;
+}
 
   /* Section Spacing */
   .mission-why-section,
