@@ -127,7 +127,7 @@ const techInner = [
 
 const techOuter = [
   { name: 'WordPress', logo: 'https://cdn.simpleicons.org/wordpress/21759B' },
-  { name: 'WooCommerce', logo: 'https://cdn.simpleicons.org/woocommerce/96588A' },
+  { name: 'Shopify', logo: 'https://cdn.simpleicons.org/shopify/95BF47' },
   { name: 'JavaScript', logo: 'https://cdn.simpleicons.org/javascript/F7DF1E' },
   { name: 'Git', logo: 'https://cdn.simpleicons.org/git/F05032' },
   { name: 'Docker', logo: 'https://cdn.simpleicons.org/docker/2496ED' },
@@ -639,7 +639,9 @@ export default function MissionSection() {
                 <div className="relative flex items-center justify-center min-h-[500px] mission-orbit-wrapper">
                   <div className="galactic-container">
                     <div className="galactic-anchor">
-                      <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center font-black text-2xl shadow-2xl shadow-blue-500/50">N</div>
+                      <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-blue-500/50">
+                        <img src="https://cdn.simpleicons.org/framer/ffffff" alt="Neptrax" className="w-8 h-8" />
+                      </div>
                     </div>
 
                     <div className="orbit-ring ring-inner">
