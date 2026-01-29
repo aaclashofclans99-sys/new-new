@@ -104,11 +104,11 @@ export default function Services({ onNavigate }: ServicesProps) {
 },
 {
   title: 'Full-Stack Web Development',
-  description: 'Fast, reliable websites and web apps built from front-end to back-end. Made to perform smoothly and scale as the business grows.',
+  description: 'Fast, reliable websites and web apps built from front-end to back end. Made to perform smoothly and scale as the business grows.',
 },
 {
   title: 'AI-Powered Chatbots',
-  description: 'Smart chatbots that answer questions, guide visitors, and offer round-the-clock support without needing constant supervision.',
+  description: 'Smart chatbots that answer questions, guide visitors, and offer round the clock support without needing constant supervision.',
 },
 {
   title: 'Social Media Management',
@@ -116,7 +116,7 @@ export default function Services({ onNavigate }: ServicesProps) {
 },
 {
   title: 'Brand Identity & Visual Design',
-  description: 'Professional branding that stands out — logos, colors, and visual styles that give any business a clear and memorable identity.',
+  description: 'Professional branding that stands out logos, colors, and visual styles that give any business a clear and memorable identity.',
 },
 {
   title: 'Social Media & Digital Advertising',
@@ -124,7 +124,7 @@ export default function Services({ onNavigate }: ServicesProps) {
 },
 {
   title: 'SEO Optimization & Growth Strategy',
-  description: 'Search-engine improvements that help websites rank higher and bring in more organic traffic through technical fixes and content strategy.',
+  description: 'Search engine improvements that help websites rank higher and bring in more organic traffic through technical fixes and content strategy.',
 },
 {
   title: 'AI Automation Agents',
@@ -132,7 +132,7 @@ export default function Services({ onNavigate }: ServicesProps) {
 },
 {
   title: 'Mobile App Design & Development',
-  description: 'User-friendly mobile apps for iOS and Android, designed to look great, run fast, and support business goals.',
+  description: 'User friendly mobile apps for iOS and Android, designed to look great, run fast, and support business goals.',
 },
 {
   title: 'Marketing Audit & Strategic Planning',
