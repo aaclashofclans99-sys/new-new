@@ -112,7 +112,7 @@
     background: transparent !important;
     border: none !important; /* Removed thin white border */
     box-shadow: none !important;
-    border-radius: 1.25rem !important;
+    border-radius: 0.5rem !important;
     overflow: hidden !important;
     display: flex !important;
     flex-direction: column !important;
@@ -149,7 +149,7 @@
   .mission-expertise-grid > div .h-48 {
     height: auto !important;
     aspect-ratio: 16 / 9 !important;
-    border-radius: 1.25rem 1.25rem 0 0 !important; /* Top corners rounded */
+    border-radius: 0.5rem 0.5rem 0 0 !important; /* Top corners rounded */
     margin: 0 !important;
     overflow: hidden;
     position: relative;
