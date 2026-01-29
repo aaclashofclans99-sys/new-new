@@ -161,13 +161,13 @@ export default function MissionSection() {
     {
       icon: TrendingUp,
       title: 'SEO Strategy',
-      description: 'Feeling lost in search results? We provide deep-dive analysis of your current site and competitors, delivering a clear roadmap to climb rankings and dominate your niche.',
+      description: 'Feeling lost in search results? We provide deep dive analysis of your current site and competitors, delivering a clear roadmap to climb rankings and dominate your niche.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600',
     },
     {
       icon: Megaphone,
       title: 'Marketing Website',
-      description: 'Stop letting visitors leave empty-handed. We design high converting landing pages and sales funnels focused on a single goal: turning viewers into leads and customers.',
+      description: 'Stop letting visitors leave empty handed. We design high converting landing pages and sales funnels focused on a single goal: turning viewers into leads and customers.',
       image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&q=80&w=600',
     },
     {
