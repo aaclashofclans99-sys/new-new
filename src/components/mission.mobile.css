@@ -150,7 +150,6 @@
     left: 0;
     right: 0;
     height: 40%;
-    background: linear-gradient(to top, rgba(13, 17, 23, 0.9), transparent);
     pointer-events: none;
   }
 
