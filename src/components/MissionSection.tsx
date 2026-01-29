@@ -143,7 +143,7 @@ export default function MissionSection() {
     {
       icon: Briefcase,
       title: 'Business Website',
-      description: 'We build professional, easy-to-navigate websites that clearly showcase what you offer, making it simple for customers to understand your value.',
+      description: 'We build professional, easy-to-navigate websites that clearly showcase Products & Services your business offer, making it simple for customers to understand your value.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600',
     },
     {
