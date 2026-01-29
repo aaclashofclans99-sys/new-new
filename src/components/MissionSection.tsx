@@ -592,23 +592,33 @@ export default function MissionSection() {
                 
                 {/* Left Content */}
                 <ScrollReveal1 direction="right">
-                  <div className="space-y-12 pl-8 outcomes-content">
+                  <div className="space-y-8 md:space-y-12 pl-8 outcomes-content">
                     <div className="space-y-6">
                       <h2 className="text-6xl lg:text-8xl font-black leading-[0.9] tracking-tighter text-[#f1f5f9]">
                         Enhanced <br /><span className="text-gradient">Outcomes</span>
                       </h2>
-                      <div className="flex gap-6 items-center">
-                        <p className="text-[#2563eb] font-black uppercase tracking-[0.5em] text-sm md:text-base">
+                      
+                      {/* Mobile View: Stacked Tagline */}
+                      <div className="md:hidden flex flex-col gap-2 mt-2">
+                        <p className="text-[#2563eb] font-black uppercase tracking-[0.2em] text-sm">Fast</p>
+                        <p className="text-[#2563eb] font-black uppercase tracking-[0.2em] text-sm">Functional</p>
+                        <p className="text-[#2563eb] font-black uppercase tracking-[0.2em] text-sm">Effective</p>
+                      </div>
+
+                      {/* Desktop View: Single Line Tagline */}
+                      <div className="hidden md:flex gap-6 items-center">
+                        <p className="text-[#2563eb] font-black uppercase tracking-[0.5em] text-base">
                           Fast • Functional • Effective
                         </p>
                       </div>
                     </div>
 
-                    <p className="text-[#abbcd4] text-xl md:text-2xl leading-relaxed font-medium max-w-xl">
+                    {/* Description: Hidden on mobile */}
+                    <p className="hidden md:block text-[#abbcd4] text-xl md:text-2xl leading-relaxed font-medium max-w-xl">
                       Delivering functional, high-end digital solutions through precise engineering and creative strategy.
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pt-6 outcomes-stats">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pt-2 md:pt-6 outcomes-stats">
                       <div className="space-y-2">
                         <p className="text-5xl font-black text-white"><Counter from={0} to={100} suffix="+" /></p>
                         <p className="text-xs text-[#94a3b8] uppercase font-black tracking-[0.2em]">Sites Built</p>
