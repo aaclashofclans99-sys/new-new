@@ -219,14 +219,14 @@ background: linear-gradient(
     margin-top: auto !important;
   }
 
-/* Minimal Dot Navigation - Like Most Websites */
+/* Ultra Minimal Dots (2-3px) */
 .expertise-dots {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6px;
-  margin-top: 2rem;
-  padding-bottom: 1rem;
+  gap: 5px;
+  margin-top: 1.5rem;
+  padding-bottom: 0.5rem;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -234,29 +234,22 @@ background: linear-gradient(
 }
 
 .expertise-dot {
-  width: 4px !important;
-  height: 4px !important;
+  width: 3px !important;
+  height: 3px !important;
   border-radius: 50% !important;
-  background: rgba(255, 255, 255, 0.25) !important;
+  background: rgba(255, 255, 255, 0.3) !important;
   border: none !important;
   padding: 0 !important;
   margin: 0 !important;
   cursor: pointer;
   transition: all 0.2s ease;
-  opacity: 0.7;
-}
-
-.expertise-dot:hover {
-  background: rgba(255, 255, 255, 0.5) !important;
-  opacity: 1;
 }
 
 .expertise-dot.active {
   background: #ffffff !important;
-  width: 8px !important;
-  height: 8px !important;
-  opacity: 1;
-  box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
+  width: 10px !important;
+  height: 3px !important;
+  border-radius: 1.5px !important; /* Makes it pill-shaped */
 }
 
 .expertise-dot::after {
