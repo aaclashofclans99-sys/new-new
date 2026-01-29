@@ -144,37 +144,37 @@ export default function MissionSection() {
       icon: Briefcase,
       title: 'Business Website',
       description: 'We build professional, easy to navigate websites that clearly showcase Products & Services your business offer, making it simple for customers to understand your value.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600',
+      image: '/business.png',
     },
     {
       icon: User,
       title: 'Personal Portfolio',
       description: 'Your work is your story. Don’t just list it Present it. We create stunning portfolios that capture your unique style and build a personal brand that makes you impossible to forget.',
-      image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=600',
+      image: '/personal.png',
     },
     {
       icon: Search,
       title: 'On-Page SEO',
       description: 'What good is a beautiful website if no one can find it? We meticulously optimize every page from content to code to rank higher on Google, helping you attract the right customers.',
-      image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=600',
+      image: '/seo.png',
     },
     {
       icon: TrendingUp,
       title: 'SEO Strategy',
       description: 'Feeling lost in search results? We provide deep dive analysis of your current site and competitors, delivering a clear roadmap to climb rankings and dominate your niche.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600',
+      image: '/seo2.png',
     },
     {
       icon: Megaphone,
       title: 'Marketing Website',
       description: 'Stop letting visitors leave empty handed. We design high converting landing pages and sales funnels focused on a single goal: turning viewers into leads and customers.',
-      image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&q=80&w=600',
+      image: '/market.png',
     },
     {
       icon: Globe,
       title: 'Brand Endorsement',
       description: 'Your digital presence is your handshake. We build websites that go beyond looks, creating a genuine connection by authentically communicating your values and building trust.',
-      image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=600',
+      image: '/brand.png',
     },
   ];
 
@@ -640,7 +640,7 @@ export default function MissionSection() {
                   <div className="galactic-container">
                     <div className="galactic-anchor">
                       <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-blue-500/50">
-                        <img src="https://cdn.simpleicons.org/framer/ffffff" alt="Neptrax" className="w-8 h-8" />
+                        <img src="/logo.png" alt="Neptrax" className="w-8 h-8" />
                       </div>
                     </div>
 
@@ -696,7 +696,7 @@ export default function MissionSection() {
               <div className="relative group overflow-hidden rounded-[3rem] border border-white/10 shadow-2xl aspect-video lg:aspect-auto lg:h-[450px] about-image-wrapper">
                 <div className="absolute inset-0 bg-[#2563eb]/10 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-700 z-10" />
                 <img 
-                  src="https://images.unsplash.com/photo-1522071823991-b99c2230359e?auto=format&fit=crop&q=80&w=1200" 
+                  src="/aboutneptrax.png" 
                   alt="About Neptrax Office" 
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
