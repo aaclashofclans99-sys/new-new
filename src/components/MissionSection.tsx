@@ -640,7 +640,6 @@ export default function MissionSection() {
                   <div className="galactic-container">
                     <div className="galactic-anchor">
                         <img src="/logo.png" alt="Neptrax" className="w-8 h-8" />
-                      </div>
                     </div>
 
                     <div className="orbit-ring ring-inner">
