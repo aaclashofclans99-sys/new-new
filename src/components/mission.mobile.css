@@ -69,8 +69,7 @@
     position: relative;
     padding-top: 2rem !important;
     padding-bottom: 5rem !important;
-    overflow-x: hidden;
-    overflow-y: visible; /* CRITICAL FIX: Prevents dot clipping */
+    overflow: hidden;
   }
 
   .mission-expertise-section .mb-24 {
@@ -220,40 +219,38 @@
     margin-top: auto !important;
   }
 
-  /* Pagination Dots - FIXED VERSION */
-  .expertise-dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7px;
+/* Pagination Dots */
+.expertise-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 
-    position: absolute;
-    bottom: 1.4rem;
-    left: 50%;
-    transform: translate3d(-50%, 0, 0); /* Pixel-perfect positioning */
-    
-    z-index: 100;
-    will-change: transform; /* Optimize for GPU */
-  }
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
 
-  /* Dot */
-  .expertise-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.22); /* Subtle contrast for mobile */
-    border: none;
-    padding: 0;
-    margin: 0;
+  z-index: 50;
+}
 
-    cursor: pointer;
-    transition: background-color 0.15s ease;
-  }
+/* Dot */
+.expertise-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.28);
+  border: none;
+  padding: 0;
+  cursor: pointer;
 
-  /* Active dot */
-  .expertise-dot.active {
-    background-color: #2563eb;
-  }
+  transition: background-color 0.15s ease;
+}
+
+/* Active dot — SAME SIZE */
+.expertise-dot.active {
+  background-color: #2563eb;
+}
 
   /* Section Spacing */
   .mission-why-section,
