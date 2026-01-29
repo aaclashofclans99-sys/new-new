@@ -598,11 +598,11 @@ export default function MissionSection() {
                         Enhanced <br /><span className="text-gradient">Outcomes</span>
                       </h2>
                       
-                      {/* Mobile View: Stacked Tagline */}
-                      <div className="md:hidden flex flex-col gap-2 mt-2">
-                        <p className="text-[#2563eb] font-black uppercase tracking-[0.2em] text-sm">Fast</p>
-                        <p className="text-[#2563eb] font-black uppercase tracking-[0.2em] text-sm">Functional</p>
-                        <p className="text-[#2563eb] font-black uppercase tracking-[0.2em] text-sm">Effective</p>
+                      {/* Mobile View: Single Line Tagline */}
+                      <div className="md:hidden mt-2">
+                         <p className="text-[#2563eb] font-black uppercase tracking-[0.2em] text-sm text-center">
+                          Fast • Functional
+                        </p>
                       </div>
 
                       {/* Desktop View: Single Line Tagline */}
@@ -687,7 +687,7 @@ export default function MissionSection() {
         </div>
 
         {/* 6. About Neptrax Section */}
-        <div className="py-24 max-w-full mx-auto px-12 mb-16 bg-[#0d1117] border-t border-white/5 mission-about-section">
+        <div className="py-24 max-w-full mx-auto px-6 md:px-12 mb-16 bg-[#0d1117] border-none md:border-t md:border-white/5 mission-about-section">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center about-grid">
             {/* Left: Horizontal Image */}
             <ScrollReveal1 direction="right">
