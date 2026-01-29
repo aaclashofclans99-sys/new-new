@@ -495,7 +495,7 @@ export default function MissionSection() {
                     </div>
                     <div className="p-8 flex-grow flex flex-col">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="group h-full flex flex-col glass-card rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 border border-white/5 custom-gradient-bg hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.3)]">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-[#2563eb] to-[#1e3a8a] flex items-center justify-center text-white shrink-0 shadow-lg shadow-blue-500/20">
                           <feature.icon size={20} />
                         </div>
                         <h3 className="text-xl font-bold text-[#f1f5f9]">{feature.title}</h3>
