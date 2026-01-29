@@ -374,7 +374,7 @@ export default function MissionSection() {
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#2563eb] to-[#1e3a8a] rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 aspect-[4/3] shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1000"
+                    src="/home.png"
                     alt="Modern Office"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
