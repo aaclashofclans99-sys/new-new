@@ -219,45 +219,34 @@
     margin-top: auto !important;
   }
 
-/* Super Minimal Dots (Like Most Professional Sites) */
-.expertise-dots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px; /* Reduced from 8px */
-  margin-top: 1.5rem; /* Reduced from 2rem */
-  padding-bottom: 0.75rem; /* Reduced from 1rem */
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-}
+  /* Pagination Dots */
+  .expertise-dots {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+  }
 
-.expertise-dot {
-  width: 4px !important; /* Slightly reduced */
-  height: 4px !important; /* Slightly reduced */
-  border-radius: 50% !important;
-  background: rgba(255, 255, 255, 0.15) !important; /* More subtle */
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
+  .expertise-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background-color: rgba(255, 255, 255, 0.2) !important; /* Inactive light gray */
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
 
-.expertise-dot::after {
-  display: none !important;
-}
+  .expertise-dot.active {
+    background-color: #2563eb !important; /* Active Brand Color */
+  }
 
-.expertise-dot.active {
-  background: #ffffff !important; /* White instead of blue */
-  width: 8px !important; /* Width doubles, height stays same */
-  height: 4px !important;
-  border-radius: 2px !important; /* Makes it pill-shaped */
-  transform: none; /* Remove scale transform */
-}
-  
   /* Section Spacing */
   .mission-why-section,
   .mission-outcomes-section,
