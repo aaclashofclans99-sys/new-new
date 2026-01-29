@@ -105,7 +105,7 @@
        Increase it to make the card narrower.
        -------------------------------------------------------
     */
-    padding: 0 0.10rem !important; 
+    padding: 0 0.4rem !important; 
 
     will-change: transform;
   }
