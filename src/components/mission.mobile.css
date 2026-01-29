@@ -219,35 +219,37 @@
     margin-top: auto !important;
   }
 
-/* Apple-style Pagination Dots */
-.expertise-dots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 9px;
-
-  position: absolute;
-  bottom: 1.6rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 50;
-}
-
+/* Pagination Dots — HARD RESET */
 .expertise-dot {
-  all: unset;
-  display: block;
+  all: unset; /* NUKES Tailwind & global button styles */
 
-  width: 8px;
-  height: 8px;
+  display: block;
+  width: 10px;
+  height: 10px;
 
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.22);
 
   cursor: pointer;
 }
 
+/* Active dot */
 .expertise-dot.active {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #2563eb;
+}
+
+/* Dot container */
+.expertise-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
 }
 
   /* Section Spacing */
