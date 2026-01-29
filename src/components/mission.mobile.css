@@ -99,10 +99,7 @@
     
     /* 
        -------------------------------------------------------
-       WIDTH CONFIGURATION
-       The width of the card is controlled by the padding below.
-       Decrease the 2nd value (0.6rem) to make the card WIDER.
-       Increase it to make the card narrower.
+       WIDTH CONFIGURATION OF SLIDER
        -------------------------------------------------------
     */
     padding: 0 0.6rem !important; 
@@ -112,13 +109,6 @@
 
   /* Hide card specific wrappers/borders and default backgrounds */
   .mission-expertise-grid > div .group.h-full {
-    /* 
-       -------------------------------------------------------
-       HEIGHT CONFIGURATION
-       The height adapts automatically to the content inside.
-       To force a fixed height, set: height: 400px !important;
-       -------------------------------------------------------
-    */
     background: transparent !important;
     border: none !important; /* Removed thin white border */
     box-shadow: none !important;
