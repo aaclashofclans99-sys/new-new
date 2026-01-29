@@ -304,21 +304,8 @@
     margin-bottom: 1rem;
     text-align: center !important;
   }
-
-  .outcomes-content p.text-\[#2563eb\] {
-    white-space: nowrap !important;
-    letter-spacing: 0.15em !important;
-    display: block !important;
-    text-align: center !important;
-    margin-bottom: 0.5rem !important;
-  }
-
-  .outcomes-content p.text-\[#abbcd4\] {
-    text-align: center !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
+  
+  /* REMOVED .outcomes-content p.text rules to allow TSX control for mobile layout changes */
 
   .outcomes-stats {
     display: flex !important;
