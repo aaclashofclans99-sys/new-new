@@ -219,42 +219,40 @@ background: linear-gradient(
     margin-top: auto !important;
   }
 
-/* Ultra Minimal Dots (2-3px) */
-.expertise-dots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  margin-top: 1.5rem;
-  padding-bottom: 0.5rem;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
+  /* Tiny Dots Pagination */
+  .expertise-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 
-.expertise-dot {
-  width: 3px !important;
-  height: 3px !important;
-  border-radius: 50% !important;
-  background: rgba(255, 255, 255, 0.3) !important;
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
+  .expertise-dot {
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 
-.expertise-dot.active {
-  background: #ffffff !important;
-  width: 10px !important;
-  height: 3px !important;
-  border-radius: 1.5px !important; /* Makes it pill-shaped */
-}
+  .expertise-dot::after {
+    display: none !important;
+  }
 
-.expertise-dot::after {
-  display: none !important;
-}
+  .expertise-dot.active {
+    background: #2563eb !important;
+    transform: scale(1.3);
+  }
 
   /* Section Spacing */
   .mission-why-section,
