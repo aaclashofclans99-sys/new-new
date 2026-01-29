@@ -23,23 +23,11 @@ export function initExpertiseSlider() {
   let isTransitioning = false;
   let autoSlideInterval;
 
-  // Setup dots - FIXED: Add click handlers
-  const dots = [];
+  // Setup dots
   slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
+    const dot = document.createElement('span');
     dot.className = `expertise-dot ${i === 0 ? 'active' : ''}`;
-    
-    // ADD THIS: Make dots clickable
-    dot.addEventListener('click', () => {
-      if (isTransitioning) return;
-      isTransitioning = true;
-      currentIndex = i + 1; // +1 because of the clone
-      updatePosition();
-    });
-    
     dotsContainer.appendChild(dot);
-    dots.push(dot);
   });
 
   // Infinite Loop setup: Clone first and last
@@ -57,16 +45,11 @@ export function initExpertiseSlider() {
     
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
     
-    // Update dots - FIXED: Correct dot index calculation
+    // Update dots
     const dots = section.querySelectorAll('.expertise-dot');
     let dotIndex = currentIndex - 1;
-    
-    // Handle clone positions
     if (currentIndex === 0) dotIndex = slideCount - 1;
-    else if (currentIndex === slideCount + 1) dotIndex = 0;
-    else if (currentIndex > slideCount) dotIndex = 0; // Safety fallback
-    else if (currentIndex < 0) dotIndex = slideCount - 1; // Safety fallback
-    else dotIndex = currentIndex - 1;
+    if (currentIndex === slideCount + 1) dotIndex = 0;
     
     dots.forEach((dot, i) => {
       dot.classList.toggle('active', i === dotIndex);
@@ -135,9 +118,5 @@ export function initExpertiseSlider() {
   // Cleanup function reference
   return () => {
     stopAutoSlide();
-    // Remove dots when component unmounts
-    if (dotsContainer.parentNode) {
-      dotsContainer.parentNode.removeChild(dotsContainer);
-    }
   };
 }
