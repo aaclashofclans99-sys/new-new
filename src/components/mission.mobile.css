@@ -102,7 +102,7 @@
        WIDTH CONFIGURATION OF SLIDER
        -------------------------------------------------------
     */
-    padding: 0 0.8rem !important; 
+    padding: 0 0.10rem !important; 
 
     will-change: transform;
   }
