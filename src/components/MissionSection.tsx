@@ -639,7 +639,6 @@ export default function MissionSection() {
                 <div className="relative flex items-center justify-center min-h-[500px] mission-orbit-wrapper">
                   <div className="galactic-container">
                     <div className="galactic-anchor">
-                      <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-blue-500/50">
                         <img src="/logo.png" alt="Neptrax" className="w-8 h-8" />
                       </div>
                     </div>
