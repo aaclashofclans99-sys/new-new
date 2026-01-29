@@ -519,30 +519,28 @@ export default function MissionSection() {
                 );
               })}
             </div>
-
-            {/* Pagination Dots (Mobile Only) */}
+            
+            {/* Pagination Dots */}
             {isMobile && (
               <div className="expertise-dots">
                 {features.map((_, idx) => {
-                  let activeIdx = currentSlide - 1;
-                  // Normalize index when on clones
-                  if (currentSlide === 0) activeIdx = features.length - 1;
-                  else if (currentSlide === features.length + 1) activeIdx = 0;
-                  // Safety check
-                  if (activeIdx < 0) activeIdx = features.length - 1;
-                  if (activeIdx >= features.length) activeIdx = 0;
+                  // Determine if this dot is active based on currentSlide accounting for infinite loop clones
+                  const realIndex = (currentSlide === 0) ? features.length - 1 : (currentSlide === features.length + 1) ? 0 : currentSlide - 1;
+                  const isActive = realIndex === idx;
 
                   return (
                     <button
                       key={idx}
-                      className={`expertise-dot ${idx === activeIdx ? 'active' : ''}`}
                       onClick={() => {
-                        if (!isTransitioningRef.current) {
-                          setCurrentSlide(idx + 1);
-                          isTransitioningRef.current = true;
-                          setIsTransitioning(true);
-                        }
+                        if (isTransitioningRef.current) return;
+                        // Avoid redundant transition if already on this slide (mentally mapped to real indices)
+                        if (realIndex === idx) return;
+
+                        isTransitioningRef.current = true;
+                        setIsTransitioning(true);
+                        setCurrentSlide(idx + 1);
                       }}
+                      className={`expertise-dot ${isActive ? 'active' : ''}`}
                       aria-label={`Go to slide ${idx + 1}`}
                     />
                   );
