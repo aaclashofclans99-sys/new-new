@@ -25,7 +25,8 @@ export function initExpertiseSlider() {
 
   // Setup dots
   slides.forEach((_, i) => {
-    const dot = document.createElement('span');
+    const dot = document.createElement('button');
+    dot.type = 'button';
     dot.className = `expertise-dot ${i === 0 ? 'active' : ''}`;
     dotsContainer.appendChild(dot);
   });
