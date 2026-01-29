@@ -143,13 +143,13 @@ export default function MissionSection() {
     {
       icon: Briefcase,
       title: 'Business Website',
-      description: 'We build professional, easy-to-navigate websites that clearly showcase Products & Services your business offer, making it simple for customers to understand your value.',
+      description: 'We build professional, easy to navigate websites that clearly showcase Products & Services your business offer, making it simple for customers to understand your value.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600',
     },
     {
       icon: User,
       title: 'Personal Portfolio',
-      description: 'Your work is your story. Don’t just list it—Present it. We create stunning portfolios that capture your unique style and build a personal brand that makes you impossible to forget.',
+      description: 'Your work is your story. Don’t just list it Present it. We create stunning portfolios that capture your unique style and build a personal brand that makes you impossible to forget.',
       image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=600',
     },
     {
@@ -167,7 +167,7 @@ export default function MissionSection() {
     {
       icon: Megaphone,
       title: 'Marketing Website',
-      description: 'Stop letting visitors leave empty-handed. We design high-converting landing pages and sales funnels focused on a single goal: turning viewers into leads and customers.',
+      description: 'Stop letting visitors leave empty-handed. We design high converting landing pages and sales funnels focused on a single goal: turning viewers into leads and customers.',
       image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&q=80&w=600',
     },
     {
