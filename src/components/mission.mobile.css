@@ -101,6 +101,10 @@
 
   /* Hide card specific wrappers/borders and default backgrounds */
   .mission-expertise-grid > div .group.h-full {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5) !important;
+    border-radius: 1.25rem !important;
     overflow: hidden !important;
     display: flex !important;
     flex-direction: column !important;
@@ -109,8 +113,10 @@
 
   /* Glossy Background applied to Content Area Only */
   .mission-expertise-grid > div .p-8 {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1.5rem !important;
     text-align: left !important;
     display: flex !important;
