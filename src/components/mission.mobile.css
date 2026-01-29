@@ -219,37 +219,35 @@
     margin-top: auto !important;
   }
 
-/* Pagination Dots — HARD RESET */
-.expertise-dot {
-  all: unset; /* NUKES Tailwind & global button styles */
-
-  display: block;
-  width: 10px;
-  height: 10px;
-
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.22);
-
-  cursor: pointer;
-}
-
-/* Active dot */
-.expertise-dot.active {
-  background-color: #2563eb;
-}
-
-/* Dot container */
+/* Apple-style Pagination Dots */
 .expertise-dots {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
 
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 1.6rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
+}
+
+.expertise-dot {
+  all: unset;
+  display: block;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.35);
+
+  cursor: pointer;
+}
+
+.expertise-dot.active {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
   /* Section Spacing */
