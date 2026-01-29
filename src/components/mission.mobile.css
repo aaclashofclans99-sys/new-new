@@ -219,42 +219,37 @@
     margin-top: auto !important;
   }
 
- /* Pagination Dots */
+/* Pagination Dots */
 .expertise-dots {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 
   position: absolute;
-  bottom: 1.75rem;
+  bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
 
-  width: auto;
   z-index: 50;
-  pointer-events: auto;
 }
 
-/* Base Dot */
+/* Dot */
 .expertise-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.35); /* Visible on dark bg */
+  background-color: rgba(255, 255, 255, 0.28);
   border: none;
   padding: 0;
   cursor: pointer;
 
-  transition: 
-    background-color 0.2s ease,
-    transform 0.2s ease;
+  transition: background-color 0.15s ease;
 }
 
-/* Active Dot */
+/* Active dot — SAME SIZE */
 .expertise-dot.active {
-  background-color: #2563eb; /* Brand blue */
-  transform: scale(1.35);    /* Clear visual hierarchy */
+  background-color: #2563eb;
 }
 
   /* Section Spacing */
