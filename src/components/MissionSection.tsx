@@ -467,7 +467,7 @@ export default function MissionSection() {
 
         {/* 3. Our Premium Expertise Section */}
         <div 
-          className="bg-[#0d1117] py-32 mission-expertise-section" 
+          className="bg-[#0d1117] py-24 mission-expertise-section" 
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
