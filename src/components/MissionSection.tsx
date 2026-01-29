@@ -144,7 +144,7 @@ export default function MissionSection() {
       icon: Briefcase,
       title: 'Business Website',
       description: 'We build professional, easy to navigate websites that clearly showcase Products & Services your business offer, making it simple for customers to understand your value.',
-      image: '/designs/business.png',
+      image: '/design/business.png',
     },
     {
       icon: User,
