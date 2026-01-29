@@ -232,22 +232,16 @@ export default function MissionSection() {
   const innerRadius = 'clamp(80px, 10vw, 95px)';
   const outerRadius = 'clamp(165px, 22vw, 190px)';
 
-  // --- Mobile Slider Logic ---
-  const [currentSlide, setCurrentSlide] = useState(1); // Start at 1 because of clone
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  // --- Mobile Slider Logic Refined ---
+  const [currentSlide, setCurrentSlide] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  // Ref to track transition status synchronously to prevent rapid swipe glitches
+  const isTransitioningRef = useRef(false);
   const autoSlideTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-
-  // Check mobile
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  const touchStart = useRef(0);
+  const touchEnd = useRef(0);
 
   // Prepare slides with clones for infinite loop (Last, ...Originals, First)
   const sliderFeatures = [
@@ -256,72 +250,116 @@ export default function MissionSection() {
     { ...features[0], id: 'clone-first' }
   ];
 
-  const nextSlide = useCallback(() => {
-    if (!isMobile) return;
-    setIsTransitioning(true);
-    setCurrentSlide(prev => prev + 1);
-  }, [isMobile]);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
-  const prevSlide = useCallback(() => {
-    if (!isMobile) return;
-    setIsTransitioning(true);
-    setCurrentSlide(prev => prev - 1);
-  }, [isMobile]);
+  const handleNext = useCallback(() => {
+    // Block if already transitioning to prevent index overflow
+    if (isTransitioningRef.current) return;
+    
+    // Safety check for bounds
+    setCurrentSlide(prev => {
+      if (prev >= sliderFeatures.length - 1) return prev;
+      
+      isTransitioningRef.current = true;
+      setIsTransitioning(true);
+      return prev + 1;
+    });
+  }, [sliderFeatures.length]);
 
-  // Auto-slide
+  const handlePrev = useCallback(() => {
+    if (isTransitioningRef.current) return;
+    
+    setCurrentSlide(prev => {
+      if (prev <= 0) return prev;
+      
+      isTransitioningRef.current = true;
+      setIsTransitioning(true);
+      return prev - 1;
+    });
+  }, []);
+
+  // Handle infinite loop reset and transition lock cleanup
+  const handleTransitionEnd = () => {
+    isTransitioningRef.current = false;
+    setIsTransitioning(false);
+
+    if (currentSlide === 0) {
+      // Jump from Clone Last to Real Last
+      setCurrentSlide(sliderFeatures.length - 2);
+    } else if (currentSlide === sliderFeatures.length - 1) {
+      // Jump from Clone First to Real First
+      setCurrentSlide(1);
+    }
+  };
+
+  // Safety Unlock: Ensure lock is released even if transitionEnd fails to fire (e.g. tab switch)
+  useEffect(() => {
+    if (isTransitioning) {
+      const timer = setTimeout(() => {
+        if (isTransitioningRef.current) {
+          isTransitioningRef.current = false;
+          setIsTransitioning(false);
+        }
+      }, 600); // slightly longer than CSS transition (0.5s)
+      return () => clearTimeout(timer);
+    }
+  }, [isTransitioning]);
+
+  // Robust Auto-slide
   useEffect(() => {
     if (!isMobile) return;
+
     const startTimer = () => {
       if (autoSlideTimerRef.current) clearInterval(autoSlideTimerRef.current);
-      autoSlideTimerRef.current = setInterval(nextSlide, 4000);
+      autoSlideTimerRef.current = setInterval(() => {
+        // Only slide if not currently interacting
+        if (!isTransitioningRef.current) {
+          handleNext();
+        }
+      }, 4000);
     };
+
     startTimer();
     return () => {
       if (autoSlideTimerRef.current) clearInterval(autoSlideTimerRef.current);
     };
-  }, [isMobile, nextSlide, currentSlide]);
-
-  // Handle infinite loop reset
-  const handleTransitionEnd = () => {
-    if (!isMobile) return;
-    
-    // If at the last clone (copy of first), jump to real first
-    if (currentSlide === sliderFeatures.length - 1) {
-      setIsTransitioning(false);
-      setCurrentSlide(1);
-    }
-    // If at the first clone (copy of last), jump to real last
-    if (currentSlide === 0) {
-      setIsTransitioning(false);
-      setCurrentSlide(sliderFeatures.length - 2);
-    }
-  };
+  }, [isMobile, handleNext]);
 
   // Touch handlers
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStart.current = e.targetTouches[0].clientX;
+    // Pause auto-slide on touch
     if (autoSlideTimerRef.current) clearInterval(autoSlideTimerRef.current);
   };
   
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+  const onTouchMove = (e: React.TouchEvent) => {
+    touchEnd.current = e.targetTouches[0].clientX;
   };
 
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
+  const onTouchEnd = () => {
+    if (!touchStart.current || !touchEnd.current) return;
+    const distance = touchStart.current - touchEnd.current;
+    const threshold = 50;
     
-    if (isLeftSwipe) nextSlide();
-    if (isRightSwipe) prevSlide();
+    if (Math.abs(distance) > threshold) {
+      if (distance > 0) handleNext();
+      else handlePrev();
+    }
     
-    setTouchStart(0);
-    setTouchEnd(0);
+    // Reset touch values
+    touchStart.current = 0;
+    touchEnd.current = 0;
     
-    // Restart timer
+    // Resume auto-slide
     if (autoSlideTimerRef.current) clearInterval(autoSlideTimerRef.current);
-    autoSlideTimerRef.current = setInterval(nextSlide, 4000);
+    autoSlideTimerRef.current = setInterval(() => {
+      if (!isTransitioningRef.current) handleNext();
+    }, 4000);
   };
 
   return (
@@ -430,9 +468,9 @@ export default function MissionSection() {
         {/* 3. Our Premium Expertise Section */}
         <div 
           className="bg-[#0d1117] py-32 mission-expertise-section" 
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
         >
           <div className="max-w-7xl mx-auto px-6 overflow-hidden">
             <ScrollReveal1 direction="up">
@@ -450,9 +488,6 @@ export default function MissionSection() {
             >
               {/* If Mobile, render sliderFeatures (with clones). If Desktop, render features (standard). */}
               {(isMobile ? sliderFeatures : features).map((feature, idx) => {
-                // Determine if this is a ScrollReveal wrapper or standard div
-                // Since ScrollReveal adds spacing/transforms, we should be careful on mobile slider
-                // We'll wrap it in ScrollReveal1 only on desktop to avoid conflict with slider transforms
                 const Content = (
                    <div className="group h-full flex flex-col glass-card rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 border border-white/5 hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.3)]">
                     <div className="h-48 overflow-hidden relative">
@@ -489,11 +524,11 @@ export default function MissionSection() {
             {isMobile && (
               <div className="expertise-dots">
                 {features.map((_, idx) => {
-                  // Calculate active index relative to real features
-                  // currentSlide 1 = feature 0
-                  // currentSlide 0 = feature last
-                  // currentSlide N+1 = feature 0
                   let activeIdx = currentSlide - 1;
+                  // Normalize index when on clones
+                  if (currentSlide === 0) activeIdx = features.length - 1;
+                  else if (currentSlide === features.length + 1) activeIdx = 0;
+                  // Safety check
                   if (activeIdx < 0) activeIdx = features.length - 1;
                   if (activeIdx >= features.length) activeIdx = 0;
 
@@ -502,8 +537,11 @@ export default function MissionSection() {
                       key={idx}
                       className={`expertise-dot ${idx === activeIdx ? 'active' : ''}`}
                       onClick={() => {
-                        setIsTransitioning(true);
-                        setCurrentSlide(idx + 1);
+                        if (!isTransitioningRef.current) {
+                          setCurrentSlide(idx + 1);
+                          isTransitioningRef.current = true;
+                          setIsTransitioning(true);
+                        }
                       }}
                       aria-label={`Go to slide ${idx + 1}`}
                     />
