@@ -42,9 +42,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             </button>
 <a
   href="mailto:contact@neptrax.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex justify-start text-[#94a3b8] hover:text-[#2563eb] text-sm transition-colors"
+  class="flex justify-start text-[#94a3b8] hover:text-[#2563eb] text-sm transition-colors"
 >
   contact@neptrax.com
 </a>
