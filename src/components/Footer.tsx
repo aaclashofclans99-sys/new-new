@@ -40,14 +40,14 @@ export default function Footer({ onNavigate }: FooterProps) {
                 Neptrax
               </span>
             </button>
-            <a
-              href="https://gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex justify-start text-[#94a3b8] hover:text-[#2563eb] text-sm transition-colors"
-            >
-              info@neptrax.com
-            </a>
+<a
+  href="mailto:contact@neptrax.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex justify-start text-[#94a3b8] hover:text-[#2563eb] text-sm transition-colors"
+>
+  contact@neptrax.com
+</a>
           </div>
 
           <div>
