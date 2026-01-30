@@ -20,8 +20,8 @@ export default function Footer({ onNavigate }: FooterProps) {
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: 'https://x.com', label: 'Twitter' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+    { icon: Twitter, href: 'https://x.com/Neptraxdigital', label: 'Twitter' },
+    { icon: Instagram, href: 'https://www.instagram.com/neptraxdigital/', label: 'Instagram' },
   ];
 
   return (
@@ -46,7 +46,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               rel="noopener noreferrer"
               className="flex justify-start text-[#94a3b8] hover:text-[#2563eb] text-sm transition-colors"
             >
-              info@neptrex.com
+              info@neptrax.com
             </a>
           </div>
 
@@ -110,7 +110,7 @@ export default function Footer({ onNavigate }: FooterProps) {
 
         <div className="border-t border-white/8 pt-8 flex flex-col items-center justify-center text-center">
           <p className="text-[#94a3b8] text-sm">
-            © 2025 Neptrax. All rights reserved.
+            © 2026 Neptrax. All rights reserved.
           </p>
         </div>
       </div>
