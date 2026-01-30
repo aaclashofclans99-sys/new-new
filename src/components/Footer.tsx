@@ -10,9 +10,10 @@ interface FooterProps {
 export default function Footer({ onNavigate }: FooterProps) {
   const quickLinks = [
     { id: 'home', label: 'Home' },
+    { id: 'services', label: 'Services' },
     { id: 'portfolio', label: 'Portfolio' },
     { id: 'contact', label: 'Contact' },
-    { id: 'services', label: 'Services' },
+
   ];
 
   const infoLinks = [
