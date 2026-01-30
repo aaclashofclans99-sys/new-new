@@ -493,7 +493,9 @@ export default function MissionSection() {
                     <div className="h-48 overflow-hidden relative">
                       <img src={feature.image} alt={feature.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     </div>
-                    <div className="p-8 flex-grow flex flex-col">
+                    <div className="p-8 flex-grow flex flex-col" style={{
+                      background: 'linear-gradient(to bottom right, rgba(15, 23, 42, 0.9) 0%, rgba(14, 20, 33, 0.85) 20%, rgba(13, 17, 23, 0.8) 35%, rgba(13, 17, 23, 0.7) 50%, rgba(14, 18, 26, 0.75) 60%, rgba(16, 22, 38, 0.8) 70%, rgba(20, 32, 64, 0.85) 80%, rgba(25, 45, 101, 0.9) 90%, rgba(30, 58, 138, 0.9) 100%)'
+                    }}>
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-[#2563eb] to-[#1e3a8a] flex items-center justify-center text-white shrink-0 shadow-lg shadow-blue-500/20">
                           <feature.icon size={20} />
